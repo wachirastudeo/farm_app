@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>บันทึกกิจกรรม - Orchard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Kanit:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f9f9f6",
+                        "secondary-fixed-dim": "#e7bdb1",
+                        "on-surface": "#1a1c1b",
+                        "on-background": "#1a1c1b",
+                        "background": "#f9f9f6",
+                        "on-secondary-fixed-variant": "#5d4037",
+                        "tertiary-fixed": "#ffdeac",
+                        "outline-variant": "#c2c9bb",
+                        "tertiary-container": "#6c4a00",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#42493e",
+                        "surface-variant": "#e2e3e0",
+                        "primary-container": "#2d5a27",
+                        "surface": "#f9f9f6",
+                        "surface-container": "#eeeeeb",
+                        "on-tertiary-fixed": "#281900",
+                        "primary": "#154212",
+                        "on-primary-container": "#9dd090",
+                        "surface-tint": "#3b6934",
+                        "surface-container-highest": "#e2e3e0",
+                        "primary-fixed-dim": "#a1d494",
+                        "on-tertiary-container": "#ffb51e",
+                        "primary-fixed": "#bcf0ae",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f4f4f1",
+                        "tertiary": "#4f3500",
+                        "on-primary-fixed": "#002201",
+                        "on-primary-fixed-variant": "#23501e",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e8e8e5",
+                        "tertiary-fixed-dim": "#ffba38",
+                        "secondary-container": "#fed3c7",
+                        "inverse-primary": "#a1d494",
+                        "on-secondary-container": "#795950",
+                        "inverse-on-surface": "#f1f1ee",
+                        "surface-dim": "#dadad7",
+                        "on-secondary-fixed": "#2c160e",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f312f",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#ffdbd0",
+                        "outline": "#72796e",
+                        "secondary": "#77574d",
+                        "on-tertiary-fixed-variant": "#604100"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "xxl": "48px",
+                        "md": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Kanit", "sans-serif"],
+                        "headline-md": ["Kanit", "sans-serif"],
+                        "headline-lg": ["Kanit", "sans-serif"],
+                        "body-lg": ["Kanit", "sans-serif"],
+                        "body-md": ["Kanit", "sans-serif"],
+                        "label-sm": ["Kanit", "sans-serif"],
+                        "display-lg": ["Kanit", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        body { font-family: 'Kanit', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-white/90 dark:bg-stone-950/90 backdrop-blur-md font-inter antialiased tracking-tight docked full-width top-0 sticky z-50 border-b border-stone-100 dark:border-stone-800 shadow-sm flex justify-between items-center h-16 px-6 w-full">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-green-800 dark:text-green-400">park</span>
+<span class="text-xl font-bold text-green-800 dark:text-green-400">Orchard</span>
+</div>
+<!-- Web Nav -->
+<nav class="hidden md:flex gap-lg items-center">
+<a class="text-stone-500 dark:text-stone-400 hover:opacity-80 transition-opacity active:scale-95 transition-all text-body-md font-body-md" href="#">หน้าแรก</a>
+<a class="text-green-800 dark:text-green-400 font-semibold hover:opacity-80 transition-opacity active:scale-95 transition-all text-body-md font-body-md border-b-2 border-primary" href="#">วางแผนงาน</a>
+<a class="text-stone-500 dark:text-stone-400 hover:opacity-80 transition-opacity active:scale-95 transition-all text-body-md font-body-md" href="#">รายรับรายจ่าย</a>
+<a class="text-stone-500 dark:text-stone-400 hover:opacity-80 transition-opacity active:scale-95 transition-all text-body-md font-body-md" href="#">บัญชี</a>
+</nav>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container flex items-center justify-center border border-outline-variant">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="Portrait of a smiling male farm manager wearing a light cap and denim shirt, standing in front of a blurred green orchard background, natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAcWMO59Gocn9t6RrkLdE_EjOFlGtXLff1PyjLPJncpttinJ7VayAIH8fSMBNOrbeURyywYuRJGEzRbP2gDW0jNFrAYDO3ymCWGyivuDGeEli8VtoyFOvI_iwrYNX1PY0jO5L2GAtWNVm15Hd6mPMPG75_bxDw-U-cBCEqli4fyeOjiHsZnI9jDek9sHemPU48Hd7Z9PXVB9dLv10maf1gx8_a_t3QA10k4fDz1PcW5nslusr8sLMmDzvfCA9nu1xsmMpk8VGdv6Pv"/>
+</div>
+</header>
+<main class="max-w-2xl mx-auto px-lg py-xl">
+<div class="mb-lg flex items-center gap-sm">
+<button aria-label="ย้อนกลับ" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-headline-md font-headline-md text-on-surface">บันทึกกิจกรรม</h1>
+</div>
+<form class="space-y-lg">
+<!-- หัวข้อกิจกรรม -->
+<div class="bg-surface-container-lowest p-lg rounded-xl shadow-[0_4px_24px_rgba(45,90,39,0.04)] border border-surface-container flex flex-col gap-md">
+<h2 class="text-label-md font-label-md text-on-surface-variant">หัวข้อกิจกรรม</h2>
+<div class="grid grid-cols-4 gap-sm">
+<label class="cursor-pointer group flex flex-col items-center gap-xs">
+<input class="peer sr-only" name="activity_type" type="radio" value="water"/>
+<div class="w-full aspect-square rounded-xl flex items-center justify-center border border-outline-variant bg-surface-container-lowest peer-checked:border-primary peer-checked:bg-primary-container/20 peer-checked:text-primary text-on-surface-variant transition-all group-hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-[32px]">water_drop</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface peer-checked:text-primary text-center">รดน้ำ</span>
+</label>
+<label class="cursor-pointer group flex flex-col items-center gap-xs">
+<input class="peer sr-only" name="activity_type" type="radio" value="fertilizer"/>
+<div class="w-full aspect-square rounded-xl flex items-center justify-center border border-outline-variant bg-surface-container-lowest peer-checked:border-primary peer-checked:bg-primary-container/20 peer-checked:text-primary text-on-surface-variant transition-all group-hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-[32px]">compost</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface peer-checked:text-primary text-center">ใส่ปุ๋ย</span>
+</label>
+<label class="cursor-pointer group flex flex-col items-center gap-xs">
+<input class="peer sr-only" name="activity_type" type="radio" value="spray"/>
+<div class="w-full aspect-square rounded-xl flex items-center justify-center border border-outline-variant bg-surface-container-lowest peer-checked:border-primary peer-checked:bg-primary-container/20 peer-checked:text-primary text-on-surface-variant transition-all group-hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-[32px]">pest_control</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface peer-checked:text-primary text-center">พ่นยา</span>
+</label>
+<label class="cursor-pointer group flex flex-col items-center gap-xs">
+<input class="peer sr-only" name="activity_type" type="radio" value="other"/>
+<div class="w-full aspect-square rounded-xl flex items-center justify-center border border-outline-variant bg-surface-container-lowest peer-checked:border-primary peer-checked:bg-primary-container/20 peer-checked:text-primary text-on-surface-variant transition-all group-hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-[32px]">more_horiz</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface peer-checked:text-primary text-center">อื่นๆ</span>
+</label>
+</div>
+<!-- ช่องพิมพ์อื่นๆ (ซ่อนไว้ก่อน, ปกติจะแสดงด้วย JS) -->
+<div class="hidden" id="other-activity-input">
+<label class="text-label-md font-label-md text-on-surface-variant sr-only" for="custom-activity">ระบุกิจกรรมอื่นๆ</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface text-body-md font-body-md rounded-lg px-md py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow mt-2" id="custom-activity" placeholder="ระบุกิจกรรมที่ทำ..." type="text"/>
+</div>
+</div>
+<!-- รายละเอียดกิจกรรม -->
+<div class="bg-surface-container-lowest p-lg rounded-xl shadow-[0_4px_24px_rgba(45,90,39,0.04)] border border-surface-container flex flex-col gap-md">
+<h2 class="text-body-lg font-body-lg text-on-surface mb-sm">รายละเอียด</h2>
+<div class="flex flex-col gap-xs">
+<label class="text-label-md font-label-md text-on-surface-variant" for="plot-select">แปลงที่ทำกิจกรรม</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest border border-outline-variant text-on-surface text-body-md font-body-md rounded-lg px-md py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow" id="plot-select">
+<option value="A1">แปลง A1 - ทุเรียนหมอนทอง</option>
+<option value="A2">แปลง A2 - ทุเรียนก้านยาว</option>
+<option value="B1">แปลง B1 - มังคุด</option>
+<option value="B2">แปลง B2 - เงาะโรงเรียน</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-on-surface-variant">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="text-label-md font-label-md text-on-surface-variant" for="activity-date">วันที่</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface text-body-md font-body-md rounded-lg px-md py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow" id="activity-date" type="date"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="text-label-md font-label-md text-on-surface-variant" for="activity-time">เวลา</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface text-body-md font-body-md rounded-lg px-md py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow" id="activity-time" type="time"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs mt-sm">
+<label class="text-label-md font-label-md text-on-surface-variant" for="activity-notes">บันทึกเพิ่มเติม</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface text-body-md font-body-md rounded-lg px-md py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow resize-none" id="activity-notes" placeholder="ระบุรายละเอียดเพิ่มเติม เช่น ปริมาณปุ๋ย สภาพอากาศ..." rows="3"></textarea>
+</div>
+</div>
+<!-- อัปโหลดรูปภาพ -->
+<div class="bg-surface-container-lowest p-lg rounded-xl shadow-[0_4px_24px_rgba(45,90,39,0.04)] border border-surface-container flex flex-col gap-md">
+<h2 class="text-body-lg font-body-lg text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-outline">photo_camera</span>
+                    รูปภาพหลักฐานการทำงาน
+                 </h2>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-xl flex flex-col items-center justify-center gap-md hover:bg-surface-container-low transition-colors cursor-pointer text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">add_photo_alternate</span>
+</div>
+<div>
+<p class="text-body-md font-body-md text-on-surface font-medium">แตะเพื่อถ่ายรูป หรือ เลือกจากแกลเลอรี</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-xs">รองรับ JPG, PNG สูงสุด 5MB</p>
+</div>
+</div>
+<!-- รูปภาพที่เลือก (จำลอง) -->
+<div class="grid grid-cols-3 gap-sm mt-sm">
+<div class="relative aspect-square rounded-lg overflow-hidden border border-surface-container">
+<img alt="กิจกรรมรดน้ำ" class="w-full h-full object-cover" data-alt="Close up of water spraying from a black irrigation hose onto dark soil around the base of a young fruit tree, bright sunny day" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT7FNr-CktXeDUhzYhYyifQIFr0TIP4FMPaKsFRmKyUvOUbgO4Kxm9szmVCoixlipKmqurjyAwSXiMZHFdDDu5Nx_RR13uQ1fgOfQJLloJRq5BLpfvjSqotqrJ6RAVvQ5agHCQqHA_pjbSa57Tt1w_hxHSQ7MOAJtrtuAgIEYkbjTSV0RoOIWCyWF0au11x9_rpOn0QsWab95E-25ZlG-Y2uxjPIaILkwCh_R5TSk52goAsRTYPTL-QhejWyo6r73I--GHH1Fs8fBG"/>
+<button aria-label="ลบรูปภาพ" class="absolute top-1 right-1 w-6 h-6 bg-surface/80 rounded-full flex items-center justify-center text-error backdrop-blur-sm shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ปุ่มบันทึก -->
+<div class="pt-md">
+<button class="w-full bg-primary hover:bg-surface-tint text-on-primary text-body-lg font-body-lg font-semibold py-4 rounded-xl shadow-[0_8px_16px_rgba(21,66,18,0.2)] transition-all active:scale-[0.98] flex items-center justify-center gap-sm" type="button">
+<span class="material-symbols-outlined filled">check_circle</span>
+                    บันทึกข้อมูล
+                </button>
+</div>
+</form>
+</main>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden bg-white dark:bg-stone-900 fixed bottom-0 w-full z-50 border-t border-stone-100 dark:border-stone-800 rounded-t-2xl shadow-[0_-4px_16px_rgba(45,90,39,0.08)] flex justify-around items-center h-20 px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-2 py-1 hover:bg-stone-50 dark:hover:bg-stone-800/50 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[11px] font-medium font-inter mt-1">หน้าแรก</span>
+</a>
+<a class="flex flex-col items-center justify-center text-green-800 dark:text-green-400 bg-green-50 dark:bg-green-900/30 rounded-xl px-4 py-2 hover:bg-stone-50 dark:hover:bg-stone-800/50 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined filled">calendar_today</span>
+<span class="text-[11px] font-medium font-inter mt-1">วางแผนงาน</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-2 py-1 hover:bg-stone-50 dark:hover:bg-stone-800/50 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[11px] font-medium font-inter mt-1">รายรับรายจ่าย</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-2 py-1 hover:bg-stone-50 dark:hover:bg-stone-800/50 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[11px] font-medium font-inter mt-1">บัญชี</span>
+</a>
+</nav>
+</body></html>

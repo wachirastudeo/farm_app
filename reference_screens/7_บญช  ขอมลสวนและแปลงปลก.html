@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>บัญชีและข้อมูลสวน</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f9f9f6",
+                        "secondary-fixed-dim": "#e7bdb1",
+                        "on-surface": "#1a1c1b",
+                        "on-background": "#1a1c1b",
+                        "background": "#f9f9f6",
+                        "on-secondary-fixed-variant": "#5d4037",
+                        "tertiary-fixed": "#ffdeac",
+                        "outline-variant": "#c2c9bb",
+                        "tertiary-container": "#6c4a00",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#42493e",
+                        "surface-variant": "#e2e3e0",
+                        "primary-container": "#2d5a27",
+                        "surface": "#f9f9f6",
+                        "surface-container": "#eeeeeb",
+                        "on-tertiary-fixed": "#281900",
+                        "primary": "#154212",
+                        "on-primary-container": "#9dd090",
+                        "surface-tint": "#3b6934",
+                        "surface-container-highest": "#e2e3e0",
+                        "primary-fixed-dim": "#a1d494",
+                        "on-tertiary-container": "#ffb51e",
+                        "primary-fixed": "#bcf0ae",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f4f4f1",
+                        "tertiary": "#4f3500",
+                        "on-primary-fixed": "#002201",
+                        "on-primary-fixed-variant": "#23501e",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e8e8e5",
+                        "tertiary-fixed-dim": "#ffba38",
+                        "secondary-container": "#fed3c7",
+                        "inverse-primary": "#a1d494",
+                        "on-secondary-container": "#795950",
+                        "inverse-on-surface": "#f1f1ee",
+                        "surface-dim": "#dadad7",
+                        "on-secondary-fixed": "#2c160e",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f312f",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#ffdbd0",
+                        "outline": "#72796e",
+                        "secondary": "#77574d",
+                        "on-tertiary-fixed-variant": "#604100"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "xl": "32px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "xxl": "48px",
+                        "md": "16px",
+                        "lg": "24px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Kanit", "sans-serif"],
+                        "headline-md": ["Kanit", "sans-serif"],
+                        "headline-lg": ["Kanit", "sans-serif"],
+                        "body-lg": ["Kanit", "sans-serif"],
+                        "body-md": ["Kanit", "sans-serif"],
+                        "label-sm": ["Kanit", "sans-serif"],
+                        "display-lg": ["Kanit", "sans-serif"]
+                    },
+                    fontSize: {
+                        "label-md": ["14px", { lineHeight: "1.4", letterSpacing: "0.02em", fontWeight: "500" }],
+                        "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "label-sm": ["12px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "display-lg": ["48px", { lineHeight: "1.1", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Kanit', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen pb-xxl">
+<!-- TopAppBar -->
+<header class="bg-white/90 dark:bg-stone-950/90 backdrop-blur-md text-green-800 dark:text-green-400 font-inter antialiased tracking-tight docked full-width top-0 sticky z-50 border-b border-stone-100 dark:border-stone-800 shadow-sm flex justify-between items-center h-16 px-6 w-full">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-green-800 dark:text-green-400">park</span>
+<span class="text-xl font-bold text-green-800 dark:text-green-400">Orchard</span>
+</div>
+<div>
+<img alt="User profile photo" class="w-8 h-8 rounded-full border-2 border-primary-container object-cover" data-alt="close-up portrait of a smiling young farmer with a sun hat against a blue sky background, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3k-c7ev-IgGTEpwrDHDnc4-w2sNivB4vq1AKAp-DOJi7WjfG9WM-_ZitTG98-vM_JFBLe2KpSsy--mLNDwNEm9UgvM29PfPj9JgBVg11CMZqWlCXUM7zkOJBmizMtV3pW1fsEX0xrRd_Ga-Hqdw58hOG3sTSo6hbgY8n6Me1pvSmtPAdSzn9asGj0oGRz8cgOGE9iUSMFz8oL6zCKISfZP0Z-7qLIlwYiDr555ATkSGIsXqM3fxclvJPv6_K6JiqSQsMdoocUZmes"/>
+</div>
+</header>
+<main class="p-lg max-w-4xl mx-auto space-y-xl pt-lg pb-32">
+<!-- Profile Header -->
+<section class="bg-surface-container-lowest rounded-xl shadow-[0_4px_24px_rgba(45,90,39,0.08)] p-md flex flex-col md:flex-row items-center gap-md border border-surface-variant">
+<div class="w-24 h-24 shrink-0 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+<img alt="Profile Picture" class="w-full h-full object-cover" data-alt="portrait of an experienced Thai farmer in a plaid shirt standing in a sunny orchard, warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1sHgllGLcL_P7ymPh2x3X7sdSxEln5FJCqwpDxf5PKAg-TiJveJE5MotDCFlu70pB-LNtQfq5QKzhSd6t-1n0oAuyI-txPbc4QW-_mxwGpYUv_2QzLAlODqpGPqJP_98fFviFa9YUZJjGOC9NYM8CgAZ1lFvKWcGEgcyNq-jSS7h2j-MCtO30Twc1_DK9UFbyzXnhZb1f5Y_SFwLOrgZO3VwqIWvUjjCYrXivZcg7-xlgp2qRIHx7Sm6afWX3Dd_-08Lv6fkMBeXd"/>
+</div>
+<div class="text-center md:text-left flex-1">
+<h1 class="font-headline-md text-headline-md text-on-surface">นายสมชาย รักเกษตร</h1>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center justify-center md:justify-start gap-xs mt-xs">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+                    สวนร่มเย็น จ.จันทบุรี
+                </p>
+<div class="mt-sm flex gap-sm justify-center md:justify-start">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-3 py-1 rounded-full shadow-sm">พรีเมียม</span>
+<span class="bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm px-3 py-1 rounded-full shadow-sm">สมาชิก 5 ปี</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-md py-sm rounded-lg hover:opacity-90 transition-opacity flex items-center gap-xs shadow-md">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+                แก้ไขโปรไฟล์
+            </button>
+</section>
+<!-- Plots Section (Bento Grid) -->
+<section>
+<div class="flex justify-between items-end mb-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">จัดการแปลงปลูก</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">ข้อมูลและสถานะของแต่ละแปลง</p>
+</div>
+<button class="text-primary font-label-md text-label-md flex items-center gap-xs hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+                    เพิ่มแปลง
+                </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Durian Plot -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-variant shadow-[0_4px_16px_rgba(45,90,39,0.06)] overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-300">
+<div class="h-32 bg-cover bg-center relative" data-alt="lush green durian trees in a tropical orchard with sunlight filtering through leaves, bright vibrant colors" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAglv7sUFesFNBwXeGIWv_zpZraYjClgxK0s97RuXCSWif8frjN0zTSWagaAqilpjDY_zO4s48XKNKbCVEEeIUdNS_NCFOE_S_BUyNKz6ErdzQbPM9Cw7KYcWwCxKDbXWqtuZThYpLRR7TxW8Loc-w0y7LeNvV3Lgml_quB68nqEYR8oLkfyjJcJkMo7VCA8ahFwb0ogfaDS0q-IKgzYw1OOl1_pUGGsLTRSTBnLtbqHd9vdZ8P77MWS3URIPCFkNMGem0_WYuGzSdd')">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-sm left-md flex items-center gap-sm">
+<span class="bg-white/20 backdrop-blur-sm text-white font-label-sm text-label-sm px-2 py-1 rounded-md border border-white/30">ทุเรียนหมอนทอง</span>
+</div>
+</div>
+<div class="p-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-md text-[20px] text-on-surface font-semibold">แปลงทุเรียน A</h3>
+<span class="bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm px-2 py-1 rounded-full shadow-sm">ปกติ</span>
+</div>
+<div class="grid grid-cols-2 gap-sm mb-md">
+<div class="bg-surface-container-low p-sm rounded-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">grass</span>
+<div>
+<p class="font-label-sm text-[10px] text-on-surface-variant uppercase">จำนวนต้น</p>
+<p class="font-body-md text-on-surface font-medium">120 ต้น</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">calendar_month</span>
+<div>
+<p class="font-label-sm text-[10px] text-on-surface-variant uppercase">อายุพืช</p>
+<p class="font-body-md text-on-surface font-medium">5 ปี</p>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full border-2 border-outline-variant text-on-surface font-label-md text-label-md py-sm rounded-lg hover:bg-surface-container-low transition-colors flex justify-center items-center gap-xs">
+                            รายละเอียด <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Mangosteen Plot -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-variant shadow-[0_4px_16px_rgba(45,90,39,0.06)] overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-300">
+<div class="h-32 bg-cover bg-center relative" data-alt="close up of ripe dark purple mangosteens on a tree branch with green leaves, soft focus background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC2eHTWn37uOSt7MAXRwoW5luImaI2JQIvKGAMdB2dIvIggvxsOHBb99lbTXT5A0vNO_Tz1KkNJukBWy-4HKZFr17VARmTtDZMxs7NidHPXHjwjLMHh8C-diDCg-u4RAYpeKYGdAIoCwLV1N5A-hGi1ZARkdf8gS_flowwFlbsTLGqqccSQPBCC07TlyxDEV6aGhSvQUqiSTJJka6FOyRXNCAlBX13Y2DahFThnHYSWDF9-036vzJVZ6QVlhwJQEWF8mSBAGqTgXnRi')">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-sm left-md flex items-center gap-sm">
+<span class="bg-white/20 backdrop-blur-sm text-white font-label-sm text-label-sm px-2 py-1 rounded-md border border-white/30">มังคุด</span>
+</div>
+</div>
+<div class="p-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-md text-[20px] text-on-surface font-semibold">แปลงมังคุด B</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-2 py-1 rounded-full shadow-sm">ให้น้ำ</span>
+</div>
+<div class="grid grid-cols-2 gap-sm mb-md">
+<div class="bg-surface-container-low p-sm rounded-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">grass</span>
+<div>
+<p class="font-label-sm text-[10px] text-on-surface-variant uppercase">จำนวนต้น</p>
+<p class="font-body-md text-on-surface font-medium">80 ต้น</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">calendar_month</span>
+<div>
+<p class="font-label-sm text-[10px] text-on-surface-variant uppercase">อายุพืช</p>
+<p class="font-body-md text-on-surface font-medium">3 ปี</p>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full border-2 border-outline-variant text-on-surface font-label-md text-label-md py-sm rounded-lg hover:bg-surface-container-low transition-colors flex justify-center items-center gap-xs">
+                            รายละเอียด <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Mixed Plot -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-variant shadow-[0_4px_16px_rgba(45,90,39,0.06)] overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-300 md:col-span-2">
+<div class="flex flex-col md:flex-row h-full">
+<div class="h-32 md:h-auto md:w-1/3 bg-cover bg-center relative" data-alt="mixed fruit orchard with various trees in rows, aerial view or wide landscape shot, sunny day" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_tF7FYY2D1wjUrF8fTEr9LidvKAZlZyqi4AefyaUkxQvPZdqcXfikgLfNRXFS_DZJiIG-UZKRF6ciuhPs2yCN4vpnFLiBKBhsiIvEsqI3XrkxXieBptR8S53bVvL8Svx1csUzoc_2oNl9Ydsr8U0tgBzcxY9AM66toCiZobEG4q6uoEQTr-R0Br-ghO7gTJS-JQSq3DGDfBsrj_Lwgc8iAgvxfd_dst2FK4VAQOdrth0XmEQkNkbwd6XV1RqboA_ENMqA79qy-Xo-')">
+<div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 to-transparent"></div>
+<div class="absolute bottom-sm left-md flex items-center gap-sm">
+<span class="bg-white/20 backdrop-blur-sm text-white font-label-sm text-label-sm px-2 py-1 rounded-md border border-white/30">สวนผสม</span>
+</div>
+</div>
+<div class="p-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-md text-[20px] text-on-surface font-semibold">แปลงผสม C (กล้วย, เงาะ)</h3>
+<span class="bg-error-container text-on-error-container font-label-sm text-label-sm px-2 py-1 rounded-full shadow-sm">ต้องดูแล</span>
+</div>
+<div class="grid grid-cols-2 gap-sm mb-md">
+<div class="bg-surface-container-low p-sm rounded-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">grass</span>
+<div>
+<p class="font-label-sm text-[10px] text-on-surface-variant uppercase">จำนวนต้น</p>
+<p class="font-body-md text-on-surface font-medium">200 ต้น</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">calendar_month</span>
+<div>
+<p class="font-label-sm text-[10px] text-on-surface-variant uppercase">อายุพืช</p>
+<p class="font-body-md text-on-surface font-medium">1-2 ปี</p>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full md:w-auto self-end border-2 border-outline-variant text-on-surface font-label-md text-label-md px-md py-sm rounded-lg hover:bg-surface-container-low transition-colors flex justify-center items-center gap-xs">
+                                รายละเอียด <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Settings & Actions -->
+<section class="space-y-sm mt-xl">
+<div class="bg-surface-container-lowest rounded-xl border border-surface-variant shadow-sm overflow-hidden divide-y divide-surface-variant">
+<a class="flex items-center p-md hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-secondary text-[24px] mr-md">settings</span>
+<span class="font-body-md text-body-md text-on-surface flex-1">ตั้งค่าระบบ</span>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</a>
+<a class="flex items-center p-md hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-secondary text-[24px] mr-md">help_center</span>
+<span class="font-body-md text-body-md text-on-surface flex-1">ศูนย์ช่วยเหลือ</span>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</a>
+</div>
+<button class="w-full bg-error-container/50 text-on-error-container font-label-md text-label-md py-md rounded-xl hover:bg-error-container transition-colors flex justify-center items-center gap-sm border border-error/20 mt-md">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                ออกจากระบบ
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden bg-white dark:bg-stone-900 fixed bottom-0 w-full z-50 border-t border-stone-100 dark:border-stone-800 rounded-t-2xl shadow-[0_-4px_16px_rgba(45,90,39,0.08)] flex justify-around items-center h-20 px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-2 py-1 hover:bg-stone-50 dark:hover:bg-stone-800/50 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="text-[11px] font-medium font-inter mt-1">หน้าแรก</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-2 py-1 hover:bg-stone-50 dark:hover:bg-stone-800/50 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">calendar_today</span>
+<span class="text-[11px] font-medium font-inter mt-1">วางแผนงาน</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-2 py-1 hover:bg-stone-50 dark:hover:bg-stone-800/50 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_balance_wallet</span>
+<span class="text-[11px] font-medium font-inter mt-1">รายรับรายจ่าย</span>
+</a>
+<a class="flex flex-col items-center justify-center text-green-800 dark:text-green-400 bg-green-50 dark:bg-green-900/30 rounded-xl px-2 py-1 hover:bg-stone-50 dark:hover:bg-stone-800/50 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-[11px] font-medium font-inter mt-1">บัญชี</span>
+</a>
+</nav>
+</body></html>

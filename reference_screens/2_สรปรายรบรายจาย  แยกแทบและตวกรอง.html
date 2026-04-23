@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#bcf0ae",
+                    "on-surface": "#1a1c1b",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffba38",
+                    "on-secondary-fixed-variant": "#5d4037",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#6c4a00",
+                    "surface-tint": "#3b6934",
+                    "on-primary-fixed-variant": "#23501e",
+                    "on-secondary-fixed": "#2c160e",
+                    "on-secondary-container": "#795950",
+                    "on-primary-container": "#9dd090",
+                    "secondary-fixed-dim": "#e7bdb1",
+                    "primary-container": "#2d5a27",
+                    "error-container": "#ffdad6",
+                    "secondary": "#77574d",
+                    "on-surface-variant": "#42493e",
+                    "surface-container-low": "#f4f4f1",
+                    "tertiary": "#4f3500",
+                    "tertiary-fixed": "#ffdeac",
+                    "on-primary-fixed": "#002201",
+                    "surface-variant": "#e2e3e0",
+                    "on-tertiary-fixed-variant": "#604100",
+                    "secondary-fixed": "#ffdbd0",
+                    "primary": "#154212",
+                    "surface-container-highest": "#e2e3e0",
+                    "error": "#ba1a1a",
+                    "surface-container": "#eeeeeb",
+                    "secondary-container": "#fed3c7",
+                    "outline": "#72796e",
+                    "on-tertiary-fixed": "#281900",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#2f312f",
+                    "surface-dim": "#dadad7",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#a1d494",
+                    "primary-fixed-dim": "#a1d494",
+                    "surface-container-high": "#e8e8e5",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c2c9bb",
+                    "on-background": "#1a1c1b",
+                    "surface-bright": "#f9f9f6",
+                    "surface": "#f9f9f6",
+                    "on-tertiary-container": "#ffb51e",
+                    "inverse-on-surface": "#f1f1ee",
+                    "background": "#f9f9f6",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "sm": "8px",
+                    "xxl": "48px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "label-md": ["Kanit", "Inter"],
+                    "display-lg": ["Kanit", "Inter"],
+                    "body-md": ["Kanit", "Inter"],
+                    "body-lg": ["Kanit", "Inter"],
+                    "headline-md": ["Kanit", "Inter"],
+                    "headline-lg": ["Kanit", "Inter"],
+                    "label-sm": ["Kanit", "Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Kanit', sans-serif; background-color: #f9f9f6; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { height: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e3e0; border-radius: 10px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Top AppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-zinc-100 shadow-sm flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600">eco</span>
+<span class="text-xl font-bold text-emerald-700 tracking-tight font-['Kanit']">OrchardPro</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center overflow-hidden border border-outline-variant">
+<span class="material-symbols-outlined text-zinc-500">account_circle</span>
+</div>
+</div>
+</header>
+<main class="pt-20 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Header Section -->
+<div class="mb-lg">
+<h1 class="text-headline-lg font-headline-lg text-on-surface mb-2">สรุปบัญชีรายรับ-รายจ่าย</h1>
+<p class="text-label-md font-label-md text-on-surface-variant">ติดตามสถานะการเงินของสวนคุณในเดือนนี้</p>
+</div>
+<!-- Period & Filter Section -->
+<div class="flex items-center justify-between gap-md mb-md">
+<div class="flex items-center bg-surface-container rounded-xl px-4 py-2 flex-1">
+<span class="material-symbols-outlined text-on-surface-variant mr-2">calendar_month</span>
+<span class="text-label-md font-label-md">ตุลาคม 2566</span>
+<span class="material-symbols-outlined ml-auto text-on-surface-variant">expand_more</span>
+</div>
+<button class="bg-surface-container p-2.5 rounded-xl border border-outline-variant active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface-variant">tune</span>
+</button>
+</div>
+<!-- Summary Bento Grid -->
+<div class="grid grid-cols-2 gap-md mb-xl">
+<!-- Net Balance Card -->
+<div class="col-span-2 p-6 rounded-2xl bg-primary text-white shadow-lg relative overflow-hidden">
+<div class="relative z-10">
+<p class="text-label-md font-label-md opacity-90 mb-1">ยอดคงเหลือสุทธิ</p>
+<h2 class="text-headline-lg font-headline-lg">฿45,200.00</h2>
+<div class="mt-4 flex items-center gap-2 text-primary-fixed text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>เพิ่มขึ้น 12% จากเดือนที่แล้ว</span>
+</div>
+</div>
+<!-- Abstract Design Element -->
+<div class="absolute -right-4 -bottom-4 w-32 h-32 bg-primary-container rounded-full opacity-20 blur-2xl"></div>
+</div>
+<!-- Income Card -->
+<div class="p-4 rounded-2xl bg-white border border-outline-variant shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-emerald-600">arrow_downward</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">รายรับทั้งหมด</p>
+<p class="text-headline-md font-headline-md text-emerald-700">฿68,000</p>
+</div>
+</div>
+<!-- Expense Card -->
+<div class="p-4 rounded-2xl bg-white border border-outline-variant shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-orange-600">arrow_upward</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">รายจ่ายทั้งหมด</p>
+<p class="text-headline-md font-headline-md text-orange-700">฿22,800</p>
+</div>
+</div>
+</div>
+<!-- Tabs Navigation -->
+<div class="flex gap-2 mb-md border-b border-outline-variant/30 pb-0.5 overflow-x-auto custom-scrollbar">
+<button class="px-6 py-2 border-b-2 border-primary text-primary font-semibold text-label-md whitespace-nowrap">ทั้งหมด</button>
+<button class="px-6 py-2 text-on-surface-variant font-medium text-label-md whitespace-nowrap">รายรับ</button>
+<button class="px-6 py-2 text-on-surface-variant font-medium text-label-md whitespace-nowrap">รายจ่าย</button>
+</div>
+<!-- Transaction List -->
+<div class="space-y-4">
+<h3 class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">วันนี้</h3>
+<!-- Item 1: Income -->
+<div class="flex items-center p-4 bg-white rounded-2xl border border-zinc-100 shadow-sm active:bg-zinc-50 transition-colors">
+<div class="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 mr-md">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div class="flex-1">
+<h4 class="text-body-md font-semibold text-on-surface">ขายทุเรียนหมอนทอง</h4>
+<p class="text-label-sm text-on-surface-variant">ขายส่งพรีเมียม • 14:30 น.</p>
+</div>
+<div class="text-right">
+<p class="text-body-md font-bold text-emerald-600">+฿42,000</p>
+<span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">โอนเงิน</span>
+</div>
+</div>
+<!-- Item 2: Expense -->
+<div class="flex items-center p-4 bg-white rounded-2xl border border-zinc-100 shadow-sm active:bg-zinc-50 transition-colors">
+<div class="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center text-orange-600 mr-md">
+<span class="material-symbols-outlined">potted_plant</span>
+</div>
+<div class="flex-1">
+<h4 class="text-body-md font-semibold text-on-surface">ซื้อปุ๋ยอินทรีย์ สูตร 1</h4>
+<p class="text-label-sm text-on-surface-variant">วัสดุการเกษตร • 09:15 น.</p>
+</div>
+<div class="text-right">
+<p class="text-body-md font-bold text-orange-600">-฿8,500</p>
+<span class="text-[10px] bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded-full font-bold">เงินสด</span>
+</div>
+</div>
+<h3 class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mt-xl">22 ตุลาคม 2566</h3>
+<!-- Item 3: Expense -->
+<div class="flex items-center p-4 bg-white rounded-2xl border border-zinc-100 shadow-sm active:bg-zinc-50 transition-colors">
+<div class="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600 mr-md">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div class="flex-1">
+<h4 class="text-body-md font-semibold text-on-surface">ค่าขนส่งผลผลิต</h4>
+<p class="text-label-sm text-on-surface-variant">โลจิสติกส์ • 16:45 น.</p>
+</div>
+<div class="text-right">
+<p class="text-body-md font-bold text-orange-600">-฿2,400</p>
+<span class="text-[10px] bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded-full font-bold">โอนเงิน</span>
+</div>
+</div>
+<!-- Item 4: Income -->
+<div class="flex items-center p-4 bg-white rounded-2xl border border-zinc-100 shadow-sm active:bg-zinc-50 transition-colors">
+<div class="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 mr-md">
+<span class="material-symbols-outlined">energy_savings_leaf</span>
+</div>
+<div class="flex-1">
+<h4 class="text-body-md font-semibold text-on-surface">ขายมังคุดคัด</h4>
+<p class="text-label-sm text-on-surface-variant">ตลาดท้องถิ่น • 11:20 น.</p>
+</div>
+<div class="text-right">
+<p class="text-body-md font-bold text-emerald-600">+฿5,600</p>
+<span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">เงินสด</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-emerald-600 text-white rounded-2xl shadow-xl flex items-center justify-center active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-white/95 backdrop-blur-lg border-t border-zinc-100 shadow-[0_-4px_20px_rgba(45,90,39,0.08)] rounded-t-2xl flex justify-around items-center px-2 py-3 pb-safe">
+<a class="flex flex-col items-center justify-center text-zinc-400 px-4 py-1.5 hover:text-blue-500 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Kanit'] text-[10px] font-semibold mt-1">หน้าแรก</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 px-4 py-1.5 hover:text-blue-500 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">potted_plant</span>
+<span class="font-['Kanit'] text-[10px] font-semibold mt-1">วางแผนสวน</span>
+</a>
+<a class="flex flex-col items-center justify-center text-orange-600 bg-orange-50 rounded-2xl px-4 py-1.5 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-['Kanit'] text-[10px] font-semibold mt-1">รายรับรายจ่าย</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 px-4 py-1.5 hover:text-blue-500 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Kanit'] text-[10px] font-semibold mt-1">บัญชี</span>
+</a>
+</nav>
+</body></html>

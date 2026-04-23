@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>บันทึกการเก็บเกี่ยว - Orchard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f9f9f6",
+                        "secondary-fixed-dim": "#e7bdb1",
+                        "on-surface": "#1a1c1b",
+                        "on-background": "#1a1c1b",
+                        "background": "#f9f9f6",
+                        "on-secondary-fixed-variant": "#5d4037",
+                        "tertiary-fixed": "#ffdeac",
+                        "outline-variant": "#c2c9bb",
+                        "tertiary-container": "#6c4a00",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#42493e",
+                        "surface-variant": "#e2e3e0",
+                        "primary-container": "#2d5a27",
+                        "surface": "#f9f9f6",
+                        "surface-container": "#eeeeeb",
+                        "on-tertiary-fixed": "#281900",
+                        "primary": "#154212",
+                        "on-primary-container": "#9dd090",
+                        "surface-tint": "#3b6934",
+                        "surface-container-highest": "#e2e3e0",
+                        "primary-fixed-dim": "#a1d494",
+                        "on-tertiary-container": "#ffb51e",
+                        "primary-fixed": "#bcf0ae",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f4f4f1",
+                        "tertiary": "#4f3500",
+                        "on-primary-fixed": "#002201",
+                        "on-primary-fixed-variant": "#23501e",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e8e8e5",
+                        "tertiary-fixed-dim": "#ffba38",
+                        "secondary-container": "#fed3c7",
+                        "inverse-primary": "#a1d494",
+                        "on-secondary-container": "#795950",
+                        "inverse-on-surface": "#f1f1ee",
+                        "surface-dim": "#dadad7",
+                        "on-secondary-fixed": "#2c160e",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f312f",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#ffdbd0",
+                        "outline": "#72796e",
+                        "secondary": "#77574d",
+                        "on-tertiary-fixed-variant": "#604100"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "xxl": "48px",
+                        "md": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Kanit", "sans-serif"],
+                        "headline-md": ["Kanit", "sans-serif"],
+                        "headline-lg": ["Kanit", "sans-serif"],
+                        "body-lg": ["Kanit", "sans-serif"],
+                        "body-md": ["Kanit", "sans-serif"],
+                        "label-sm": ["Kanit", "sans-serif"],
+                        "display-lg": ["Kanit", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Kanit', sans-serif; background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen pb-[100px] md:pb-0 md:pt-16">
+<!-- TopAppBar (Web) -->
+<header class="hidden md:flex justify-between items-center h-16 px-6 w-full bg-white/90 dark:bg-stone-950/90 backdrop-blur-md shadow-sm border-b border-stone-100 dark:border-stone-800 docked full-width top-0 sticky z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-800 dark:text-green-400">park</span>
+<span class="text-xl font-bold text-green-800 dark:text-green-400 font-inter antialiased tracking-tight">Orchard</span>
+</div>
+<nav class="flex gap-6">
+<a class="text-stone-500 dark:text-stone-400 hover:opacity-80 transition-opacity font-label-md text-label-md" href="#">หน้าแรก</a>
+<a class="text-stone-500 dark:text-stone-400 hover:opacity-80 transition-opacity font-label-md text-label-md" href="#">วางแผนงาน</a>
+<a class="text-stone-500 dark:text-stone-400 hover:opacity-80 transition-opacity font-label-md text-label-md" href="#">รายรับรายจ่าย</a>
+<a class="text-stone-500 dark:text-stone-400 hover:opacity-80 transition-opacity font-label-md text-label-md" href="#">บัญชี</a>
+</nav>
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="close up portrait of smiling male farmer with warm sunlight on face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQehdvOYmHUecqp0bKM4EO1uaikRc-If9cIkrZcQZeTEL972K420izH3t64KbYKl4ZQ0ziEheiyR9SGFtQWckiPMfGDOpBQpun30EpBYMJfL7F8EMRZu0YK4ZpK9lYzcwD5PZplCfTXIOV8IV53n1fGyb6dYyz5GJHDwXD3CHlfERT9ZxIUxHIYakFOODfKri6IhLBZ_-pEtcp-ohRqXQW2YD56Rx2N7DwlM5TgP3L0370OEb1lh2uWLoQc8zAfmOIYEOStMa4sPOk"/>
+</div>
+</header>
+<!-- Mobile Header -->
+<header class="md:hidden flex items-center gap-4 h-16 px-4 bg-white shadow-sm border-b border-surface-variant sticky top-0 z-40">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container active:scale-95 transition-all text-on-surface">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">บันทึกการเก็บเกี่ยว</h1>
+</header>
+<main class="max-w-3xl mx-auto px-4 md:px-lg py-lg md:py-xl">
+<div class="hidden md:block mb-lg">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">บันทึกการเก็บเกี่ยว</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">บันทึกข้อมูลผลผลิตที่เก็บเกี่ยวได้ในวันนี้</p>
+</div>
+<form class="space-y-lg">
+<!-- Section: พื้นที่และชนิดผลผลิต -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-variant overflow-hidden">
+<div class="p-4 md:p-6 border-b border-surface-variant bg-surface-container-low/50">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">location_on</span>
+                        ข้อมูลแปลง
+                    </h2>
+</div>
+<div class="p-4 md:p-6 space-y-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2" for="plot">เลือกแปลงที่เก็บเกี่ยว *</label>
+<select class="w-full h-12 px-4 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-primary transition-colors font-body-md text-body-md text-on-surface appearance-none" id="plot">
+<option value="">-- กรุณาเลือกแปลง --</option>
+<option value="1">แปลง A1 (โซนเหนือ)</option>
+<option value="2">แปลง B2 (โซนตะวันออก)</option>
+<option value="3">แปลง C3 (ริมน้ำ)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-3">ชนิดผลไม้ *</label>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<label class="relative cursor-pointer">
+<input class="peer sr-only" name="crop_type" type="radio" value="durian"/>
+<div class="h-12 flex items-center justify-center rounded-lg border border-outline-variant bg-surface-container-lowest peer-checked:bg-tertiary-fixed peer-checked:border-tertiary peer-checked:text-on-tertiary-fixed transition-colors font-body-md text-body-md text-on-surface hover:bg-surface-container-low">
+                                    ทุเรียน
+                                </div>
+</label>
+<label class="relative cursor-pointer">
+<input class="peer sr-only" name="crop_type" type="radio" value="mangosteen"/>
+<div class="h-12 flex items-center justify-center rounded-lg border border-outline-variant bg-surface-container-lowest peer-checked:bg-tertiary-fixed peer-checked:border-tertiary peer-checked:text-on-tertiary-fixed transition-colors font-body-md text-body-md text-on-surface hover:bg-surface-container-low">
+                                    มังคุด
+                                </div>
+</label>
+<label class="relative cursor-pointer">
+<input class="peer sr-only" name="crop_type" type="radio" value="rambutan"/>
+<div class="h-12 flex items-center justify-center rounded-lg border border-outline-variant bg-surface-container-lowest peer-checked:bg-tertiary-fixed peer-checked:border-tertiary peer-checked:text-on-tertiary-fixed transition-colors font-body-md text-body-md text-on-surface hover:bg-surface-container-low">
+                                    เงาะ
+                                </div>
+</label>
+<label class="relative cursor-pointer">
+<input class="peer sr-only" name="crop_type" type="radio" value="longkong"/>
+<div class="h-12 flex items-center justify-center rounded-lg border border-outline-variant bg-surface-container-lowest peer-checked:bg-tertiary-fixed peer-checked:border-tertiary peer-checked:text-on-tertiary-fixed transition-colors font-body-md text-body-md text-on-surface hover:bg-surface-container-low">
+                                    ลองกอง
+                                </div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: ปริมาณและเกรด -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-variant overflow-hidden">
+<div class="p-4 md:p-6 border-b border-surface-variant bg-surface-container-low/50">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">scale</span>
+                        ปริมาณผลผลิต
+                    </h2>
+</div>
+<div class="p-4 md:p-6 space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2" for="quantity">จำนวน (เข่ง/ลัง) *</label>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-primary transition-colors font-body-md text-body-md text-on-surface" id="quantity" placeholder="0" type="number"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-body-md text-body-md">หน่วย</span>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2" for="weight">น้ำหนักรวม (กก.) *</label>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-primary transition-colors font-body-md text-body-md text-on-surface" id="weight" placeholder="0.0" step="0.1" type="number"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-body-md text-body-md">กก.</span>
+</div>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-3">เกรดผลผลิต *</label>
+<div class="grid grid-cols-3 gap-3">
+<label class="relative cursor-pointer">
+<input class="peer sr-only" name="grade" type="radio" value="A"/>
+<div class="h-12 flex items-center justify-center rounded-lg border border-outline-variant bg-surface-container-lowest peer-checked:bg-primary-container peer-checked:border-primary peer-checked:text-on-primary-container transition-colors font-body-md text-body-md text-on-surface hover:bg-surface-container-low">
+                                    เกรด A
+                                </div>
+</label>
+<label class="relative cursor-pointer">
+<input class="peer sr-only" name="grade" type="radio" value="B"/>
+<div class="h-12 flex items-center justify-center rounded-lg border border-outline-variant bg-surface-container-lowest peer-checked:bg-primary-container peer-checked:border-primary peer-checked:text-on-primary-container transition-colors font-body-md text-body-md text-on-surface hover:bg-surface-container-low">
+                                    เกรด B
+                                </div>
+</label>
+<label class="relative cursor-pointer">
+<input class="peer sr-only" name="grade" type="radio" value="mixed"/>
+<div class="h-12 flex items-center justify-center rounded-lg border border-outline-variant bg-surface-container-lowest peer-checked:bg-surface-variant peer-checked:border-outline peer-checked:text-on-surface transition-colors font-body-md text-body-md text-on-surface hover:bg-surface-container-low">
+                                    คละเกรด
+                                </div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: รูปภาพ -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-variant overflow-hidden">
+<div class="p-4 md:p-6 border-b border-surface-variant bg-surface-container-low/50">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">add_a_photo</span>
+                        รูปภาพผลผลิต
+                    </h2>
+</div>
+<div class="p-4 md:p-6">
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-8 flex flex-col items-center justify-center text-center hover:bg-surface-container-low transition-colors cursor-pointer bg-surface">
+<span class="material-symbols-outlined text-[48px] text-outline mb-4">cloud_upload</span>
+<p class="font-label-md text-label-md text-on-surface mb-1">แตะเพื่ออัปโหลดรูปภาพ</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">หรือลากไฟล์มาวางที่นี่</p>
+</div>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-4">
+<button class="w-full h-[56px] bg-[#FF7A00] hover:bg-[#E66E00] active:scale-[0.98] transition-all rounded-xl font-headline-md text-[18px] text-white flex items-center justify-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined icon-fill text-[24px]">save</span>
+                    บันทึกข้อมูลเก็บเกี่ยว
+                </button>
+</div>
+</form>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden flex justify-around items-center h-20 px-4 pb-safe w-full bg-white dark:bg-stone-900 fixed bottom-0 w-full z-50 rounded-t-2xl border-t border-stone-200/50 dark:border-stone-800 shadow-[0_-4px_16px_rgba(45,90,39,0.08)]">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-2 py-1 hover:bg-stone-50 dark:hover:bg-stone-800/50 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="text-[11px] font-medium font-inter">หน้าแรก</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-2 py-1 hover:bg-stone-50 dark:hover:bg-stone-800/50 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">calendar_today</span>
+<span class="text-[11px] font-medium font-inter">วางแผนงาน</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-2 py-1 hover:bg-stone-50 dark:hover:bg-stone-800/50 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">account_balance_wallet</span>
+<span class="text-[11px] font-medium font-inter">รายรับรายจ่าย</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-2 py-1 hover:bg-stone-50 dark:hover:bg-stone-800/50 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="text-[11px] font-medium font-inter">บัญชี</span>
+</a>
+</nav>
+</body></html>

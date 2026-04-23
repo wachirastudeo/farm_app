@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error-container": "#93000a",
+                      "surface-container": "#eeeeeb",
+                      "primary-container": "#2d5a27",
+                      "primary-fixed": "#bcf0ae",
+                      "on-tertiary-fixed-variant": "#604100",
+                      "on-secondary": "#ffffff",
+                      "on-surface-variant": "#42493e",
+                      "surface-dim": "#dadad7",
+                      "inverse-surface": "#2f312f",
+                      "tertiary": "#4f3500",
+                      "on-secondary-fixed": "#2c160e",
+                      "on-primary-fixed-variant": "#23501e",
+                      "on-secondary-container": "#795950",
+                      "outline": "#72796e",
+                      "surface-bright": "#f9f9f6",
+                      "surface-container-high": "#e8e8e5",
+                      "surface": "#f9f9f6",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#154212",
+                      "surface-tint": "#3b6934",
+                      "secondary": "#77574d",
+                      "surface-container-low": "#f4f4f1",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed": "#002201",
+                      "inverse-primary": "#a1d494",
+                      "on-background": "#1a1c1b",
+                      "tertiary-container": "#6c4a00",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#ffb51e",
+                      "primary-fixed-dim": "#a1d494",
+                      "on-secondary-fixed-variant": "#5d4037",
+                      "outline-variant": "#c2c9bb",
+                      "background": "#f9f9f6",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed": "#ffdeac",
+                      "surface-variant": "#e2e3e0",
+                      "error": "#ba1a1a",
+                      "on-surface": "#1a1c1b",
+                      "surface-container-highest": "#e2e3e0",
+                      "secondary-fixed-dim": "#e7bdb1",
+                      "on-primary-container": "#9dd090",
+                      "tertiary-fixed-dim": "#ffba38",
+                      "secondary-fixed": "#ffdbd0",
+                      "inverse-on-surface": "#f1f1ee",
+                      "on-tertiary-fixed": "#281900",
+                      "secondary-container": "#fed3c7",
+                      "on-primary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "xxl": "48px",
+                      "sm": "8px",
+                      "xl": "32px",
+                      "xs": "4px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Kanit"],
+                      "body-md": ["Kanit"],
+                      "body-lg": ["Kanit"],
+                      "display-lg": ["Kanit"],
+                      "label-md": ["Kanit"],
+                      "headline-md": ["Kanit"],
+                      "label-sm": ["Kanit"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border-b border-zinc-100 dark:border-zinc-800/50 shadow-sm">
+<div class="flex items-center justify-between w-full px-6 h-16">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="portrait of a professional male farm manager in his 40s wearing a clean outdoor vest, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAABf_vd7BmMFqJRqk8fLj2LDt5YLqHgyk29VsFD80gYkYSrjQN_gRw4r8mPyNAM0FDsztCV08J7GNEAQ30sCXA2mmiysTpfw2dnzlx_UDnL32wXLc7QlzZYXCiQ48_LOB5-tSIvJxHthMumwltnpbeYSjPaVZxs1XIxi-Lm_bV7_C1naWpkK8Jre9HRS7t0_Yo7SnDtG51Ctondu_dZyLXD7Jr1WvekjvZEUMG4g3TRs_TD_1qQHhV2h2MtU_r9FI2BN5RBHA_h0pH"/>
+</div>
+</div>
+<h1 class="font-headline-md text-emerald-700 dark:text-emerald-400 font-bold tracking-tight">คลังความรู้</h1>
+<button class="active:scale-95 transition-all hover:opacity-75">
+<span class="material-symbols-outlined text-zinc-500 dark:text-zinc-400" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-20 px-6 max-w-4xl mx-auto">
+<!-- Featured Article -->
+<section class="mb-8">
+<div class="relative w-full h-64 rounded-3xl overflow-hidden shadow-lg group">
+<img alt="Featured Article" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="cinematic wide shot of a sun-drenched apple orchard with perfectly aligned trees and golden morning light filtering through leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd4wfhiRfYszksdtn5H_bsbPlEOYZimgd-4eGhKGYqZYf3f93l4v8w-OvnGdKWJucXemjg-gDoZdCRJAmTuVWw4TURKw3GHnqqOIgN754Tf0j0EOQBbRIBiqIS54h066Wfmm0shA8COfIaOOHp9Dpo0pw82cS8tLGfdnSDG0hw7WhlH8geR_hvP1bs-AWhUU4jOIWMMWXn8AmBGZU1x5UPtXiyQHhuJQ1PQt6zqiUN2KlOg58exiftJCVOpNDvmXWi1snVEDoIPkzn"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 p-6">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full font-label-sm mb-3 inline-block">บทความแนะนำ</span>
+<h2 class="text-white font-headline-md leading-tight mb-2">เทคนิคการบริหารจัดการน้ำในสวนทุเรียนช่วงฤดูแล้ง</h2>
+<p class="text-zinc-300 font-body-md line-clamp-1">เรียนรู้วิธีการจัดทำระบบให้น้ำอย่างมีประสิทธิภาพเพื่อผลผลิตที่มีคุณภาพสูง</p>
+</div>
+</div>
+</section>
+<!-- Search Bar -->
+<div class="relative mb-8">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input class="w-full bg-surface-container border-none rounded-2xl py-4 pl-12 pr-4 font-body-md focus:ring-2 focus:ring-primary-container transition-all" placeholder="ค้นหาบทความ..." type="text"/>
+</div>
+<!-- Category Filters -->
+<section class="mb-8 overflow-x-auto no-scrollbar flex gap-3 pb-2">
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-primary-container text-on-primary-container font-label-md shadow-sm">ทั้งหมด</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-white border border-outline-variant text-on-surface-variant font-label-md hover:bg-surface-container transition-colors">การดูแลพืช</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-white border border-outline-variant text-on-surface-variant font-label-md hover:bg-surface-container transition-colors">ปุ๋ยและยา</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-white border border-outline-variant text-on-surface-variant font-label-md hover:bg-surface-container transition-colors">ข่าวสาร</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-white border border-outline-variant text-on-surface-variant font-label-md hover:bg-surface-container transition-colors">เทคโนโลยี</button>
+</section>
+<!-- Article List -->
+<section class="space-y-6">
+<h3 class="font-headline-md text-on-surface">บทความล่าสุด</h3>
+<!-- Article Card 1 -->
+<div class="flex gap-4 p-4 rounded-3xl bg-white border border-surface-container-highest shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<div class="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden shrink-0">
+<img alt="Thumbnail" class="w-full h-full object-cover" data-alt="close-up of organic fertilizer pellets on fertile soil with a small sprout growing next to it, bright daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAllyvPN0QERhLYxBkrDSSTfWMJVmMIEQ0cduvG5dt9dupjR0lCysa8IGdIlNnJTAUPjZlu-lKEzv6SIeeMBsHoAFKfEybJKiQpxAYikW9aNbSmzDZwtr3es-KJuxyWN2Is1HRBGLKGGxiVPubHL1JrTBZhvCUySyyhoIOGbMsTj_Cy9NTGkpWXHM8bzQQXE31x1eSwGRi9_wxYkcGzTftY_j4zfU2HYOJXrsB6T5feJLuMXz7Q-9WNK1J9ocp7UHYEsZ6g8VpIu3bB"/>
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<span class="text-tertiary font-label-sm mb-1 block">ปุ๋ยและยา</span>
+<h4 class="font-body-lg font-semibold text-on-surface line-clamp-2 leading-snug">5 สูตรปุ๋ยหมักชีวภาพที่ช่วยบำรุงหน้าดินอย่างยั่งยืน</h4>
+</div>
+<div class="flex items-center gap-4 text-zinc-400 font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span> 2 ชม. ที่แล้ว</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="visibility">visibility</span> 1.2k</span>
+</div>
+</div>
+</div>
+<!-- Article Card 2 -->
+<div class="flex gap-4 p-4 rounded-3xl bg-white border border-surface-container-highest shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<div class="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden shrink-0">
+<img alt="Thumbnail" class="w-full h-full object-cover" data-alt="macro shot of lush green vegetable leaves in a modern farm setting with water droplets and morning mist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRiLfpEwyhnzDIpTIIkM3EkS6bY5-YgUPwxu8fKqgSXNjQgPPNv2V-q_W6wWlg9YQp_a71m_wRDFUyBRQ-X9zeLNvXpO7_0eHy00Z00alKP3MKVhOHLRl04QD8bgkyJNaThnAxCJ6aYj5So-Ed15uDw52qmTeMYEY2QSsTx_1QqEhYTg42ZqOS_5UPPoCMF3eN0BbHSOD8GyRUE-D5J9HDZ56rd6owaFE4b6ML-QN9kGFQAImWrDD4XJV9epW2id0N0uMbbyq8bPX7"/>
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<span class="text-tertiary font-label-sm mb-1 block">การดูแลพืช</span>
+<h4 class="font-body-lg font-semibold text-on-surface line-clamp-2 leading-snug">วิธีการป้องกันและกำจัดเพลี้ยไฟในสวนมังคุดอย่างได้ผล</h4>
+</div>
+<div class="flex items-center gap-4 text-zinc-400 font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span> เมื่อวานนี้</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="visibility">visibility</span> 850</span>
+</div>
+</div>
+</div>
+<!-- Article Card 3 -->
+<div class="flex gap-4 p-4 rounded-3xl bg-white border border-surface-container-highest shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<div class="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden shrink-0">
+<img alt="Thumbnail" class="w-full h-full object-cover" data-alt="top view of a modern farm dashboard on a tablet being used in a field of green crops, bright sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnRHg95C2NWwhW29gnhqHpO5tzu6QmDruRpjeYOM8GPM4NWRZSD1NfeWzcvdSuqygbi_sDww2CiGgypiTbjx1_zcqScITNhP_5TvkoCLgUQQi61SaB5pm3Risa1qwhm7cybl1qrUtD3JSuUwSdOtZTF11c_DbQln52-3f7jv8olTYbxDUm25lQfMxGckSYmLboGCveISYDHMmvnNQZG3q5mTcer1mVn7AFnYCcoXT2yxhF1MRu_8thHCjxYVpcDVkYwf0dPaG798Up"/>
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<span class="text-tertiary font-label-sm mb-1 block">ข่าวสาร</span>
+<h4 class="font-body-lg font-semibold text-on-surface line-clamp-2 leading-snug">เทรนด์ตลาดผลไม้ส่งออกปี 2567 ที่ชาวสวนควรรู้</h4>
+</div>
+<div class="flex items-center gap-4 text-zinc-400 font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span> 2 วันที่แล้ว</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="visibility">visibility</span> 2.4k</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Recommended Topics Bento -->
+<section class="mt-12 mb-8">
+<h3 class="font-headline-md text-on-surface mb-6">หัวข้อที่คุณอาจสนใจ</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-primary-fixed text-on-primary-fixed-variant p-6 rounded-[2rem] flex flex-col justify-between min-h-[160px]">
+<span class="material-symbols-outlined text-4xl" data-icon="eco">eco</span>
+<p class="font-label-md font-bold">เกษตรอินทรีย์แบบมืออาชีพ</p>
+</div>
+<div class="bg-secondary-container text-on-secondary-container p-6 rounded-[2rem] flex flex-col justify-between min-h-[160px]">
+<span class="material-symbols-outlined text-4xl" data-icon="monitoring">monitoring</span>
+<p class="font-label-md font-bold">การวิเคราะห์ต้นทุนและกำไร</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-2 pb-6 pt-3 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-lg border-t border-zinc-100 dark:border-zinc-800 shadow-[0_-4px_20px_rgba(0,0,0,0.03)] rounded-t-2xl z-50">
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-3 py-1.5 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-sans text-[10px] font-semibold">หน้าแรก</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-3 py-1.5 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-sans text-[10px] font-semibold">วางแผนสวน</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-3 py-1.5 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-sans text-[10px] font-semibold">รายรับรายจ่าย</span>
+</a>
+<a class="flex flex-col items-center justify-center text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-900/40 rounded-xl px-3 py-1.5 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="library_books" style="font-variation-settings: 'FILL' 1;">library_books</span>
+<span class="font-sans text-[10px] font-semibold">คลังความรู้</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-3 py-1.5 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-sans text-[10px] font-semibold">บัญชี</span>
+</a>
+</nav>
+</body></html>

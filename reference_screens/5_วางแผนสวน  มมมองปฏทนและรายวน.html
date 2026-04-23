@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>วางแผนสวน - OrchardPro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#bcf0ae",
+                    "on-surface": "#1a1c1b",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffba38",
+                    "on-secondary-fixed-variant": "#5d4037",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#6c4a00",
+                    "surface-tint": "#3b6934",
+                    "on-primary-fixed-variant": "#23501e",
+                    "on-secondary-fixed": "#2c160e",
+                    "on-secondary-container": "#795950",
+                    "on-primary-container": "#9dd090",
+                    "secondary-fixed-dim": "#e7bdb1",
+                    "primary-container": "#2d5a27",
+                    "error-container": "#ffdad6",
+                    "secondary": "#77574d",
+                    "on-surface-variant": "#42493e",
+                    "surface-container-low": "#f4f4f1",
+                    "tertiary": "#4f3500",
+                    "tertiary-fixed": "#ffdeac",
+                    "on-primary-fixed": "#002201",
+                    "surface-variant": "#e2e3e0",
+                    "on-tertiary-fixed-variant": "#604100",
+                    "secondary-fixed": "#ffdbd0",
+                    "primary": "#154212",
+                    "surface-container-highest": "#e2e3e0",
+                    "error": "#ba1a1a",
+                    "surface-container": "#eeeeeb",
+                    "secondary-container": "#fed3c7",
+                    "outline": "#72796e",
+                    "on-tertiary-fixed": "#281900",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#2f312f",
+                    "surface-dim": "#dadad7",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#a1d494",
+                    "primary-fixed-dim": "#a1d494",
+                    "surface-container-high": "#e8e8e5",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c2c9bb",
+                    "on-background": "#1a1c1b",
+                    "surface-bright": "#f9f9f6",
+                    "surface": "#f9f9f6",
+                    "on-tertiary-container": "#ffb51e",
+                    "inverse-on-surface": "#f1f1ee",
+                    "background": "#f9f9f6",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "sm": "8px",
+                    "xxl": "48px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "kanit": ["Kanit", "sans-serif"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Kanit', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border-b border-zinc-100 dark:border-zinc-800 shadow-sm flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400" data-icon="eco">eco</span>
+<h1 class="text-xl font-bold text-emerald-700 dark:text-emerald-500 tracking-tight font-kanit">OrchardPro</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-emerald-50 transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined text-emerald-600" data-icon="calendar_month">calendar_month</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-emerald-700" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="pt-20 px-6 max-w-2xl mx-auto">
+<!-- Title & Switch -->
+<div class="flex justify-between items-end mb-6">
+<div>
+<h2 class="text-headline-lg font-kanit text-primary-container">วางแผนสวน</h2>
+<p class="text-label-md text-on-surface-variant font-kanit">จัดการกิจกรรมประจำวันของคุณ</p>
+</div>
+</div>
+<!-- Date Picker Horizontal -->
+<div class="flex gap-4 overflow-x-auto pb-4 -mx-6 px-6 no-scrollbar">
+<div class="flex flex-col items-center justify-center min-w-[64px] h-20 rounded-2xl bg-white border border-outline-variant shadow-sm">
+<span class="text-label-sm font-kanit text-on-surface-variant">จ.</span>
+<span class="text-headline-md font-kanit">12</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[64px] h-20 rounded-2xl bg-primary-container text-on-primary shadow-lg ring-2 ring-primary-container/20">
+<span class="text-label-sm font-kanit">อ.</span>
+<span class="text-headline-md font-kanit">13</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[64px] h-20 rounded-2xl bg-white border border-outline-variant shadow-sm">
+<span class="text-label-sm font-kanit text-on-surface-variant">พ.</span>
+<span class="text-headline-md font-kanit">14</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[64px] h-20 rounded-2xl bg-white border border-outline-variant shadow-sm">
+<span class="text-label-sm font-kanit text-on-surface-variant">พฤ.</span>
+<span class="text-headline-md font-kanit">15</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[64px] h-20 rounded-2xl bg-white border border-outline-variant shadow-sm">
+<span class="text-label-sm font-kanit text-on-surface-variant">ศ.</span>
+<span class="text-headline-md font-kanit">16</span>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-2 mb-6 overflow-x-auto no-scrollbar">
+<span class="px-4 py-2 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-kanit text-label-md whitespace-nowrap shadow-sm">ทั้งหมด</span>
+<span class="px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant font-kanit text-label-md whitespace-nowrap hover:bg-surface-container-low transition-colors">รดน้ำ</span>
+<span class="px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant font-kanit text-label-md whitespace-nowrap hover:bg-surface-container-low transition-colors">ใส่ปุ๋ย</span>
+<span class="px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant font-kanit text-label-md whitespace-nowrap hover:bg-surface-container-low transition-colors">พ่นยา</span>
+</div>
+<!-- Task List View -->
+<div class="space-y-4">
+<!-- Task Card 1 -->
+<div class="bg-white rounded-2xl p-4 border border-[#E0E0DB] shadow-[0_4px_12px_rgba(45,90,39,0.08)] flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-600" data-icon="water_drop">water_drop</span>
+</div>
+<div class="flex-1">
+<h4 class="font-kanit font-semibold text-on-surface">รดน้ำทุเรียน แปลง A</h4>
+<p class="text-label-sm font-kanit text-on-surface-variant">08:00 น. • โซนน้ำหยด</p>
+</div>
+<button class="w-10 h-10 rounded-full border-2 border-emerald-600 flex items-center justify-center text-emerald-600">
+<span class="material-symbols-outlined text-lg" data-icon="check" data-weight="fill">check</span>
+</button>
+</div>
+<!-- Task Card 2 -->
+<div class="bg-white rounded-2xl p-4 border border-[#E0E0DB] shadow-[0_4px_12px_rgba(45,90,39,0.08)] flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-orange-600" data-icon="compost">compost</span>
+</div>
+<div class="flex-1">
+<h4 class="font-kanit font-semibold text-on-surface">ใส่ปุ๋ยมะม่วง แปลง B</h4>
+<p class="text-label-sm font-kanit text-on-surface-variant">10:30 น. • สูตร 15-15-15</p>
+</div>
+<button class="w-10 h-10 rounded-full border-2 border-outline-variant flex items-center justify-center text-outline-variant">
+</button>
+</div>
+<!-- Task Card 3 -->
+<div class="bg-white rounded-2xl p-4 border border-[#E0E0DB] shadow-[0_4px_12px_rgba(45,90,39,0.08)] flex items-center gap-4 opacity-70">
+<div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-emerald-600" data-icon="pest_control">pest_control</span>
+</div>
+<div class="flex-1">
+<h4 class="font-kanit font-semibold text-on-surface line-through">พ่นยากำจัดแมลง</h4>
+<p class="text-label-sm font-kanit text-on-surface-variant">เสร็จสิ้นแล้วเมื่อ 07:00 น.</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-lg" data-icon="done_all" data-weight="fill">done_all</span>
+</div>
+</div>
+</div>
+<!-- Monthly Preview (Mini) -->
+<div class="mt-8">
+<h3 class="text-headline-md font-kanit mb-4">ปฏิทินงานเดือนนี้</h3>
+<div class="bg-white rounded-3xl p-6 border border-[#E0E0DB] shadow-sm overflow-hidden">
+<div class="grid grid-cols-7 gap-y-4 text-center">
+<div class="text-label-sm text-on-surface-variant font-kanit">อา.</div>
+<div class="text-label-sm text-on-surface-variant font-kanit">จ.</div>
+<div class="text-label-sm text-on-surface-variant font-kanit">อ.</div>
+<div class="text-label-sm text-on-surface-variant font-kanit">พ.</div>
+<div class="text-label-sm text-on-surface-variant font-kanit">พฤ.</div>
+<div class="text-label-sm text-on-surface-variant font-kanit">ศ.</div>
+<div class="text-label-sm text-on-surface-variant font-kanit">ส.</div>
+<!-- Dummy Dates -->
+<div class="py-2 text-surface-dim">28</div>
+<div class="py-2 text-surface-dim">29</div>
+<div class="py-2 text-surface-dim">30</div>
+<div class="py-2 relative font-medium">1<span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-blue-500"></span></div>
+<div class="py-2 relative font-medium">2</div>
+<div class="py-2 relative font-medium">3<span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-orange-500"></span></div>
+<div class="py-2 relative font-medium">4</div>
+<div class="py-2 relative font-medium">5</div>
+<div class="py-2 relative font-medium">6<span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-emerald-500"></span></div>
+<div class="py-2 relative font-medium">7</div>
+<div class="py-2 relative font-medium">8</div>
+<div class="py-2 relative font-medium">9</div>
+<div class="py-2 relative font-medium">10</div>
+<div class="py-2 relative font-medium">11</div>
+<div class="py-2 relative font-medium">12</div>
+<div class="py-2 relative font-bold bg-primary-container/10 rounded-xl text-primary-container">13
+                        <span class="absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-0.5">
+<span class="w-1 h-1 rounded-full bg-blue-500"></span>
+<span class="w-1 h-1 rounded-full bg-orange-500"></span>
+</span>
+</div>
+<div class="py-2 relative font-medium">14</div>
+<div class="py-2 relative font-medium">15</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-emerald-600 text-white rounded-2xl shadow-xl flex items-center justify-center active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-2 py-3 pb-safe bg-white/95 dark:bg-zinc-950/95 backdrop-blur-lg border-t border-zinc-100 dark:border-zinc-800 shadow-[0_-4px_20px_rgba(45,90,39,0.08)] z-50 rounded-t-2xl">
+<div class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-4 py-1.5 hover:text-blue-500 transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Kanit'] text-[10px] font-semibold">หน้าแรก</span>
+</div>
+<div class="flex flex-col items-center justify-center text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/20 rounded-2xl px-4 py-1.5 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="potted_plant">potted_plant</span>
+<span class="font-['Kanit'] text-[10px] font-semibold">วางแผนสวน</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-4 py-1.5 hover:text-blue-500 transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-['Kanit'] text-[10px] font-semibold">รายรับรายจ่าย</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-4 py-1.5 hover:text-blue-500 transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Kanit'] text-[10px] font-semibold">บัญชี</span>
+</div>
+</nav>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

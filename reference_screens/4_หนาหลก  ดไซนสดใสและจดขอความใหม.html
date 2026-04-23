@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="th"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Orchard Fresh - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#f8fafc",
+                        surface: "#ffffff",
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        },
+                        orange: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316',
+                            600: '#ea580c',
+                        },
+                        sky: {
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ["Kanit", "sans-serif"],
+                    },
+                    boxShadow: {
+                        'ambient': '0 4px 20px -4px rgba(0, 0, 0, 0.05)',
+                        'ambient-lg': '0 8px 32px -4px rgba(14, 165, 233, 0.25)',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            background-color: theme('colors.background');
+            color: #1e293b;
+            min-height: max(884px, 100dvh);
+        }
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom, 24px);
+        }
+    </style>
+</head>
+<body class="antialiased pb-28">
+<!-- Header Section -->
+<header class="flex items-center justify-between px-6 py-5 bg-surface/80 backdrop-blur-md sticky top-0 z-10 shadow-sm">
+<div>
+<h1 class="text-2xl font-bold text-slate-800 tracking-tight" style="">หน้าแรก</h1>
+<p class="text-base text-slate-500 font-medium mt-0.5" style="">สวัสดีตอนเช้า, สมชาย</p>
+</div>
+<div class="size-14 rounded-full bg-slate-100 overflow-hidden border-2 border-emerald-500 shadow-sm">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up portrait of an Asian male farmer smiling warmly, outdoors with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClGTGqrgkOWcQbNUV5Ph47FPZ0jczyuChHb6i2pP6jhLifdxteY36dNl2lcCC8LVnC6-U_pdncI3h5iBdvwiGcSPiC93Kfr5sRiT1lcBm7YsyVzoK8loUByOjFxHON5PRVw61avc_ij_ORT7sj3qhd-oY_UOPMw98qrWbKef_zhzspvyg1bVM7BLtQmto24qc_HsqqmNMOZ4NK0TU-O6bz5v7nLCWrdPegAuUX9cJjYsD3A6waOZlNyumZZHG7oapJa9AucEB3Qg2y" style="">
+</div>
+</header>
+<main class="flex flex-col gap-8 px-6 mt-4">
+<!-- Premium Weather Card -->
+<section class="bg-gradient-to-br from-sky-400 to-blue-500 rounded-2xl p-6 shadow-ambient-lg text-white relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute top-0 right-0 w-40 h-40 bg-white rounded-full mix-blend-overlay opacity-20 blur-2xl transform translate-x-12 -translate-y-12"></div>
+<div class="relative z-10 flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="text-sm font-medium text-sky-50 mb-1" style="">สภาพอากาศปัจจุบัน</span>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-bold tracking-tight" style="">32°C</span>
+</div>
+<div class="flex items-center gap-1.5 text-base text-sky-50 mt-2 font-medium">
+<span class="material-symbols-outlined text-[20px]" style="">humidity_percentage</span>
+<span class="" style="">ความชื้น 65%</span>
+</div>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-[56px] text-yellow-300 drop-shadow-md" style="font-variation-settings: &quot;FILL&quot; 1;">light_mode</span>
+<span class="text-sm font-medium mt-1" style="">แดดจัด</span>
+</div>
+</div>
+<div class="border-t border-white/20 pt-5 flex justify-between relative z-10 px-2">
+<div class="flex flex-col items-center gap-1.5">
+<span class="text-sm text-sky-100 font-medium" style="">พรุ่งนี้</span>
+<span class="material-symbols-outlined text-[28px] text-white" style="font-variation-settings: &quot;FILL&quot; 1;">partly_cloudy_day</span>
+<span class="text-lg font-semibold" style="">31°</span>
+</div>
+<div class="flex flex-col items-center gap-1.5">
+<span class="text-sm text-sky-100 font-medium" style="">พฤหัส</span>
+<span class="material-symbols-outlined text-[28px] text-white" style="font-variation-settings: &quot;FILL&quot; 1;">rainy</span>
+<span class="text-lg font-semibold" style="">28°</span>
+</div>
+<div class="flex flex-col items-center gap-1.5">
+<span class="text-sm text-sky-100 font-medium" style="">ศุกร์</span>
+<span class="material-symbols-outlined text-[28px] text-white" style="font-variation-settings: &quot;FILL&quot; 1;">cloud</span>
+<span class="text-lg font-semibold" style="">30°</span>
+</div>
+</div>
+</section>
+<!-- Quick Menu Grid -->
+<section>
+<h2 class="text-xl font-bold text-slate-800 mb-4 tracking-tight" style="">เมนูด่วน</h2>
+<div class="grid grid-cols-2 gap-4">
+<button class="bg-surface rounded-2xl p-4 flex flex-col items-center justify-center gap-3 shadow-ambient border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all h-32 group" style="">
+<div class="size-14 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]" style="">assignment</span>
+</div>
+<span class="text-base font-semibold text-slate-700" style="">วางแผนงานสวน</span>
+</button>
+<button class="bg-surface rounded-2xl p-4 flex flex-col items-center justify-center gap-3 shadow-ambient border border-slate-100 hover:border-orange-200 hover:shadow-md transition-all h-32 group" style="">
+<div class="size-14 rounded-full bg-orange-50 flex items-center justify-center text-orange-600 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]" style="">add_circle</span>
+</div>
+<span class="text-base font-semibold text-slate-700" style="">บันทึกงาน</span>
+</button>
+<button class="bg-surface rounded-2xl p-4 flex flex-col items-center justify-center gap-3 shadow-ambient border border-slate-100 hover:border-amber-200 hover:shadow-md transition-all h-32 group" style="">
+<div class="size-14 rounded-full bg-amber-50 flex items-center justify-center text-amber-600 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]" style="">agriculture</span>
+</div>
+<span class="text-base font-semibold text-slate-700" style="">บันทึกเก็บเกี่ยว</span>
+</button>
+<button class="bg-surface rounded-2xl p-4 flex flex-col items-center justify-center gap-3 shadow-ambient border border-slate-100 hover:border-sky-200 hover:shadow-md transition-all h-32 group" style="">
+<div class="size-14 rounded-full bg-sky-50 flex items-center justify-center text-sky-600 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]" style="">shopping_cart</span>
+</div>
+<span class="text-base font-semibold text-slate-700" style="">ซื้อของ</span>
+</button>
+</div>
+</section>
+<!-- Daily Tasks -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold text-slate-800 tracking-tight" style="">งานเร่งด่วนวันนี้</h2>
+<button class="text-base text-emerald-600 font-semibold flex items-center hover:text-emerald-700 transition-colors" style="">
+                    ดูทั้งหมด <span class="material-symbols-outlined text-[20px]" style="">chevron_right</span>
+</button>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Task Card 1 -->
+<div class="bg-surface rounded-2xl p-5 flex items-center gap-4 shadow-ambient border border-slate-100">
+<div class="size-12 rounded-full bg-sky-50 flex items-center justify-center text-sky-500 shrink-0">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: &quot;FILL&quot; 1;">water_drop</span>
+</div>
+<div class="flex-1 flex flex-col">
+<span class="text-base font-bold text-slate-800" style="">รดน้ำทุเรียน แปลง A</span>
+<span class="text-sm font-medium text-slate-500 mt-0.5" style="">ก่อน 10:00 น. • ปริมาณ 50L/ต้น</span>
+</div>
+<button class="size-10 rounded-full border-2 border-slate-200 flex items-center justify-center text-slate-400 hover:bg-emerald-500 hover:border-emerald-500 hover:text-white transition-all shrink-0" style="">
+<span class="material-symbols-outlined text-[24px]" style="">check</span>
+</button>
+</div>
+<!-- Task Card 2 - High Priority -->
+<div class="bg-surface rounded-2xl p-5 flex items-center gap-4 shadow-ambient border border-orange-100 relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-orange-500"></div>
+<div class="size-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 shrink-0">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: &quot;FILL&quot; 1;">pest_control</span>
+</div>
+<div class="flex-1 flex flex-col">
+<span class="text-base font-bold text-slate-800" style="">ตรวจสอบแมลง แปลง B</span>
+<span class="text-sm font-medium text-orange-600 mt-0.5" style="">พบเพลี้ยระบาดเมื่อวาน</span>
+</div>
+<button class="size-10 rounded-full border-2 border-slate-200 flex items-center justify-center text-slate-400 hover:bg-emerald-500 hover:border-emerald-500 hover:text-white transition-all shrink-0" style="">
+<span class="material-symbols-outlined text-[24px]" style="">check</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Custom Bottom Nav matching required structure -->
+<nav class="fixed bottom-0 left-0 w-full bg-surface border-t border-slate-100 px-2 pb-safe pt-2 shadow-[0_-8px_30px_rgba(0,0,0,0.04)] z-50">
+<div class="flex justify-between items-center h-16 max-w-md mx-auto">
+<a class="flex flex-1 flex-col items-center justify-center gap-1.5 text-emerald-600" href="#" style="">
+<span class="material-symbols-outlined text-[26px]" style="font-variation-settings: &quot;FILL&quot; 1;">home</span>
+<span class="text-[11px] sm:text-xs font-semibold whitespace-nowrap" style="">หน้าแรก</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1.5 text-slate-400 hover:text-emerald-600 transition-colors" href="#" style="">
+<span class="material-symbols-outlined text-[26px]" style="">map</span>
+<span class="text-[11px] sm:text-xs font-medium whitespace-nowrap" style="">กิจกรรม</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1.5 text-slate-400 hover:text-emerald-600 transition-colors" href="#" style="">
+<span class="material-symbols-outlined text-[26px]" style="">account_balance_wallet</span>
+<span class="text-[11px] sm:text-xs font-medium whitespace-nowrap" style="">รายรับรายจ่าย</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1.5 text-slate-400 hover:text-emerald-600 transition-colors" href="#" style="">
+<span class="material-symbols-outlined text-[26px]" style="">person</span>
+<span class="text-[11px] sm:text-xs font-medium whitespace-nowrap" style="">บัญชี</span>
+</a>
+</div>
+</nav>
+</body></html>
