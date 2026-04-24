@@ -1,4 +1,5 @@
 import React from 'react';
+import { BottomNavBar } from '@/components/layout/BottomNavBar';
 
 export default function Home() {
   return (
@@ -120,26 +121,7 @@ export default function Home() {
         </section>
       </main>
 
-      <nav className="fixed bottom-0 left-0 w-full bg-white border-t border-slate-100 px-2 pb-[env(safe-area-inset-bottom,24px)] pt-2 shadow-[0_-8px_30px_rgba(0,0,0,0.04)] z-50">
-        <div className="flex justify-between items-center h-16 max-w-md mx-auto">
-          <a className="flex flex-1 flex-col items-center justify-center gap-1.5 text-emerald-600" href="#">
-            <span className="material-symbols-outlined text-[26px]" style={{fontVariationSettings: '"FILL" 1'}}>home</span>
-            <span className="text-[11px] sm:text-xs font-semibold whitespace-nowrap">หน้าแรก</span>
-          </a>
-          <a className="flex flex-1 flex-col items-center justify-center gap-1.5 text-slate-400 hover:text-emerald-600 transition-colors" href="#">
-            <span className="material-symbols-outlined text-[26px]">map</span>
-            <span className="text-[11px] sm:text-xs font-medium whitespace-nowrap">กิจกรรม</span>
-          </a>
-          <a className="flex flex-1 flex-col items-center justify-center gap-1.5 text-slate-400 hover:text-emerald-600 transition-colors" href="#">
-            <span className="material-symbols-outlined text-[26px]">account_balance_wallet</span>
-            <span className="text-[11px] sm:text-xs font-medium whitespace-nowrap">รายรับรายจ่าย</span>
-          </a>
-          <a className="flex flex-1 flex-col items-center justify-center gap-1.5 text-slate-400 hover:text-emerald-600 transition-colors" href="#">
-            <span className="material-symbols-outlined text-[26px]">person</span>
-            <span className="text-[11px] sm:text-xs font-medium whitespace-nowrap">บัญชี</span>
-          </a>
-        </div>
-      </nav>
+      <BottomNavBar />
     </>
   );
 }
