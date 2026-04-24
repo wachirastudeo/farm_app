@@ -31,7 +31,7 @@ export function BottomNavBar() {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 w-full flex justify-around items-center px-2 py-3 pb-safe bg-white/95 backdrop-blur-lg border-t border-zinc-100 shadow-[0_-4px_20px_rgba(45,90,39,0.08)] z-50 rounded-t-2xl">
+    <nav className="lg:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-2 py-3 pb-safe bg-white/95 backdrop-blur-lg border-t border-zinc-100 shadow-[0_-4px_20px_rgba(45,90,39,0.08)] z-50 rounded-t-2xl">
       {navItems.map((item) => {
         const isActive = pathname === item.href;
         return (

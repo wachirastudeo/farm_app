@@ -1,30 +1,41 @@
+"use client";
+
 import React from 'react';
 import { BottomNavBar } from '@/components/layout/BottomNavBar';
-import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export default function Account() {
+  const router = useRouter();
+
   return (
-    <>
-      {/* TopAppBar */}
-      <header className="bg-white/90 backdrop-blur-md text-[#154212] font-inter antialiased tracking-tight sticky top-0 z-50 border-b border-[#e2e3e0] shadow-sm flex justify-between items-center h-16 px-6 w-full">
-        <div className="flex items-center gap-2">
-          <span className="material-symbols-outlined text-[#2d5a27]">park</span>
-          <span className="text-xl font-bold text-[#2d5a27] font-kanit">Orchard</span>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-[#f2f8f5] to-slate-100 pb-32 relative overflow-hidden font-kanit">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-emerald-500/5 to-transparent pointer-events-none"></div>
+      <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-[20%] left-[-10%] w-80 h-80 bg-teal-400/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      {/* Header */}
+      <header className="sticky top-0 z-50 px-6 h-20 flex items-center justify-between backdrop-blur-xl bg-white/60 border-b border-white/40 shadow-[0_4px_30px_rgba(0,0,0,0.03)]">
+        <div className="flex items-center gap-3">
+          <div className="size-10 bg-gradient-to-br from-emerald-600 to-teal-800 rounded-xl flex items-center justify-center text-white shadow-lg">
+            <span className="material-symbols-outlined text-[20px]">park</span>
+          </div>
+          <span className="text-xl font-black text-slate-800 tracking-tight">Smart Orchard</span>
         </div>
-        <div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            alt="User profile photo" 
-            className="w-8 h-8 rounded-full border-2 border-[#2d5a27] object-cover" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3k-c7ev-IgGTEpwrDHDnc4-w2sNivB4vq1AKAp-DOJi7WjfG9WM-_ZitTG98-vM_JFBLe2KpSsy--mLNDwNEm9UgvM29PfPj9JgBVg11CMZqWlCXUM7zkOJBmizMtV3pW1fsEX0xrRd_Ga-Hqdw58hOG3sTSo6hbgY8n6Me1pvSmtPAdSzn9asGj0oGRz8cgOGE9iUSMFz8oL6zCKISfZP0Z-7qLIlwYiDr555ATkSGIsXqM3fxclvJPv6_K6JiqSQsMdoocUZmes"
-          />
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img 
+          alt="User profile" 
+          className="w-10 h-10 rounded-full ring-2 ring-emerald-500 ring-offset-2 object-cover" 
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3k-c7ev-IgGTEpwrDHDnc4-w2sNivB4vq1AKAp-DOJi7WjfG9WM-_ZitTG98-vM_JFBLe2KpSsy--mLNDwNEm9UgvM29PfPj9JgBVg11CMZqWlCXUM7zkOJBmizMtV3pW1fsEX0xrRd_Ga-Hqdw58hOG3sTSo6hbgY8n6Me1pvSmtPAdSzn9asGj0oGRz8cgOGE9iUSMFz8oL6zCKISfZP0Z-7qLIlwYiDr555ATkSGIsXqM3fxclvJPv6_K6JiqSQsMdoocUZmes"
+        />
       </header>
 
-      <main className="p-6 max-w-4xl mx-auto space-y-8 pt-6 pb-32">
-        {/* Profile Header */}
-        <section className="bg-white rounded-xl shadow-[0_4px_24px_rgba(45,90,39,0.08)] p-4 flex flex-col md:flex-row items-center gap-4 border border-[#e2e3e0]">
-          <div className="w-24 h-24 shrink-0 rounded-full overflow-hidden border-4 border-[#f9f9f6] shadow-sm">
+      <main className="max-w-6xl mx-auto px-6 py-8 space-y-10 relative z-10">
+        {/* Profile Header Card */}
+        <section className="relative overflow-hidden bg-white/80 backdrop-blur-xl rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 group transition-all duration-500 hover:shadow-xl">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-emerald-300/10 to-teal-300/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+          
+          <div className="relative w-32 h-32 shrink-0 rounded-full overflow-hidden ring-4 ring-white shadow-2xl group-hover:scale-105 transition-transform duration-700">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
               alt="Profile Picture" 
@@ -32,173 +43,157 @@ export default function Account() {
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1sHgllGLcL_P7ymPh2x3X7sdSxEln5FJCqwpDxf5PKAg-TiJveJE5MotDCFlu70pB-LNtQfq5QKzhSd6t-1n0oAuyI-txPbc4QW-_mxwGpYUv_2QzLAlODqpGPqJP_98fFviFa9YUZJjGOC9NYM8CgAZ1lFvKWcGEgcyNq-jSS7h2j-MCtO30Twc1_DK9UFbyzXnhZb1f5Y_SFwLOrgZO3VwqIWvUjjCYrXivZcg7-xlgp2qRIHx7Sm6afWX3Dd_-08Lv6fkMBeXd"
             />
           </div>
-          <div className="text-center md:text-left flex-1">
-            <h1 className="text-2xl font-semibold font-kanit text-[#1a1c1b]">นายสมชาย รักเกษตร</h1>
-            <p className="text-base font-kanit text-[#42493e] flex items-center justify-center md:justify-start gap-1 mt-1">
-              <span className="material-symbols-outlined text-[18px]">location_on</span>
+          
+          <div className="text-center md:text-left flex-1 relative z-10">
+            <div className="flex flex-col md:flex-row md:items-center gap-3">
+              <h1 className="text-4xl font-black text-slate-800 tracking-tight">นายสมชาย รักเกษตร</h1>
+              <div className="flex gap-2 justify-center md:justify-start">
+                <span className="bg-gradient-to-r from-amber-400 to-amber-600 text-white text-[10px] font-black px-3 py-1 rounded-lg shadow-lg flex items-center gap-1 uppercase tracking-wider">
+                  <span className="material-symbols-outlined text-[12px]">verified</span>
+                  Premium
+                </span>
+              </div>
+            </div>
+            <p className="text-base font-bold text-slate-500 flex items-center justify-center md:justify-start gap-2 mt-3">
+              <span className="material-symbols-outlined text-[20px] text-emerald-500">location_on</span>
               สวนร่มเย็น จ.จันทบุรี
             </p>
-            <div className="mt-2 flex gap-2 justify-center md:justify-start">
-              <span className="bg-[#ffdeac] text-[#281900] text-xs font-semibold font-kanit px-3 py-1 rounded-full shadow-sm">พรีเมียม</span>
-              <span className="bg-[#bcf0ae] text-[#002201] text-xs font-semibold font-kanit px-3 py-1 rounded-full shadow-sm">สมาชิก 5 ปี</span>
+            <div className="mt-5 flex items-center gap-6 justify-center md:justify-start">
+              <div className="flex flex-col">
+                <span className="text-xs font-black text-slate-400 uppercase tracking-widest">สมาชิก</span>
+                <span className="text-xl font-black text-slate-800">5 ปี 8 เดือน</span>
+              </div>
+              <div className="w-[1px] h-8 bg-slate-200"></div>
+              <div className="flex flex-col">
+                <span className="text-xs font-black text-slate-400 uppercase tracking-widest">ระดับแปลง</span>
+                <span className="text-xl font-black text-emerald-600">A+ Expert</span>
+              </div>
             </div>
           </div>
-          <button className="bg-[#154212] text-white text-sm font-medium font-kanit px-4 py-2 rounded-lg hover:opacity-90 transition-opacity flex items-center gap-1 shadow-md">
-            <span className="material-symbols-outlined text-[20px]">edit</span>
-            แก้ไขโปรไฟล์
+          
+          <button className="relative z-10 bg-slate-900 text-white font-bold px-8 py-4 rounded-[1.5rem] hover:bg-emerald-800 hover:-translate-y-1 transition-all flex items-center gap-2 cursor-pointer">
+            <span className="material-symbols-outlined">edit</span>
+            แก้ไขข้อมูล
           </button>
         </section>
 
-        {/* Plots Section (Bento Grid) */}
-        <section>
-          <div className="flex justify-between items-end mb-4">
+        {/* Plots Grid */}
+        <section className="space-y-6">
+          <div className="flex justify-between items-end px-2">
             <div>
-              <h2 className="text-2xl font-semibold font-kanit text-[#1a1c1b]">จัดการแปลงปลูก</h2>
-              <p className="text-base font-kanit text-[#42493e]">ข้อมูลและสถานะของแต่ละแปลง</p>
+              <h2 className="text-2xl font-black text-slate-800 tracking-tight">แปลงปลูกของฉัน</h2>
+              <p className="text-sm font-bold text-slate-500 mt-1">บริหารจัดการและติดตามความคืบหน้า</p>
             </div>
-            <button className="text-[#154212] text-sm font-medium font-kanit flex items-center gap-1 hover:opacity-80 transition-opacity">
-              <span className="material-symbols-outlined text-[20px]">add_circle</span>
-              เพิ่มแปลง
+            <button className="size-12 rounded-2xl bg-white shadow-md border border-slate-200/60 hover:bg-emerald-50 text-emerald-600 flex items-center justify-center transition-all group active:scale-95 cursor-pointer">
+              <span className="material-symbols-outlined font-black group-hover:rotate-90 transition-transform">add</span>
             </button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Durian Plot */}
-            <div className="bg-white rounded-xl border border-[#e2e3e0] shadow-[0_4px_16px_rgba(45,90,39,0.06)] overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-300">
-              <div className="h-32 bg-cover bg-center relative" style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAglv7sUFesFNBwXeGIWv_zpZraYjClgxK0s97RuXCSWif8frjN0zTSWagaAqilpjDY_zO4s48XKNKbCVEEeIUdNS_NCFOE_S_BUyNKz6ErdzQbPM9Cw7KYcWwCxKDbXWqtuZThYpLRR7TxW8Loc-w0y7LeNvV3Lgml_quB68nqEYR8oLkfyjJcJkMo7VCA8ahFwb0ogfaDS0q-IKgzYw1OOl1_pUGGsLTRSTBnLtbqHd9vdZ8P77MWS3URIPCFkNMGem0_WYuGzSdd')"}}>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute bottom-2 left-4 flex items-center gap-2">
-                  <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold font-kanit px-2 py-1 rounded-md border border-white/30">ทุเรียนหมอนทอง</span>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Plot 1 */}
+            <div className="group bg-white/80 backdrop-blur-xl rounded-[2.5rem] border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
+              <div className="h-48 bg-slate-200 relative overflow-hidden">
+                <div className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-1000" style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAglv7sUFesFNBwXeGIWv_zpZraYjClgxK0s97RuXCSWif8frjN0zTSWagaAqilpjDY_zO4s48XKNKbCVEEeIUdNS_NCFOE_S_BUyNKz6ErdzQbPM9Cw7KYcWwCxKDbXWqtuZThYpLRR7TxW8Loc-w0y7LeNvV3Lgml_quB68nqEYR8oLkfyjJcJkMo7VCA8ahFwb0ogfaDS0q-IKgzYw1OOl1_pUGGsLTRSTBnLtbqHd9vdZ8P77MWS3URIPCFkNMGem0_WYuGzSdd')"}}></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                <div className="absolute top-4 left-4">
+                  <span className="bg-emerald-500 text-white text-[10px] font-black px-3 py-1 rounded-lg uppercase tracking-widest">ปกติ</span>
+                </div>
+                <div className="absolute bottom-4 left-5 flex items-center gap-2">
+                  <span className="text-white font-black tracking-wide">ทุเรียนหมอนทอง</span>
                 </div>
               </div>
-              <div className="p-4 flex-1 flex flex-col justify-between">
+              <div className="p-7 flex-1 flex flex-col justify-between">
                 <div>
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-[20px] font-semibold font-kanit text-[#1a1c1b]">แปลงทุเรียน A</h3>
-                    <span className="bg-[#bcf0ae] text-[#002201] text-xs font-semibold font-kanit px-2 py-1 rounded-full shadow-sm">ปกติ</span>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2 mb-4">
-                    <div className="bg-[#f4f4f1] p-2 rounded-lg flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[#6c4a00] text-[20px]">grass</span>
-                      <div>
-                        <p className="text-[10px] font-semibold font-kanit text-[#42493e] uppercase">จำนวนต้น</p>
-                        <p className="text-base font-medium font-kanit text-[#1a1c1b]">120 ต้น</p>
-                      </div>
+                  <h3 className="text-2xl font-black text-slate-800 mb-5">แปลงทุเรียน A1</h3>
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
+                      <span className="text-[10px] font-black text-slate-400 uppercase block mb-1">จำนวนต้น</span>
+                      <span className="text-xl font-black text-slate-800">120 <span className="text-sm font-normal">ต้น</span></span>
                     </div>
-                    <div className="bg-[#f4f4f1] p-2 rounded-lg flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[#77574d] text-[20px]">calendar_month</span>
-                      <div>
-                        <p className="text-[10px] font-semibold font-kanit text-[#42493e] uppercase">อายุพืช</p>
-                        <p className="text-base font-medium font-kanit text-[#1a1c1b]">5 ปี</p>
-                      </div>
+                    <div className="bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
+                      <span className="text-[10px] font-black text-slate-400 uppercase block mb-1">อายุพืช</span>
+                      <span className="text-xl font-black text-slate-800">5 <span className="text-sm font-normal">ปี</span></span>
                     </div>
                   </div>
                 </div>
-                <button className="w-full border-2 border-[#c2c9bb] text-[#1a1c1b] text-sm font-medium font-kanit py-2 rounded-lg hover:bg-[#f4f4f1] transition-colors flex justify-center items-center gap-1">
-                  รายละเอียด <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                <button className="w-full py-4 bg-slate-50 rounded-2xl text-slate-600 font-bold flex items-center justify-center gap-2 hover:bg-emerald-600 hover:text-white transition-all duration-300 group/btn cursor-pointer">
+                  ดูรายงานเชิงลึก
+                  <span className="material-symbols-outlined text-xl group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
                 </button>
               </div>
             </div>
 
-            {/* Mangosteen Plot */}
-            <div className="bg-white rounded-xl border border-[#e2e3e0] shadow-[0_4px_16px_rgba(45,90,39,0.06)] overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-300">
-              <div className="h-32 bg-cover bg-center relative" style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuC2eHTWn37uOSt7MAXRwoW5luImaI2JQIvKGAMdB2dIvIggvxsOHBb99lbTXT5A0vNO_Tz1KkNJukBWy-4HKZFr17VARmTtDZMxs7NidHPXHjwjLMHh8C-diDCg-u4RAYpeKYGdAIoCwLV1N5A-hGi1ZARkdf8gS_flowwFlbsTLGqqccSQPBCC07TlyxDEV6aGhSvQUqiSTJJka6FOyRXNCAlBX13Y2DahFThnHYSWDF9-036vzJVZ6QVlhwJQEWF8mSBAGqTgXnRi')"}}>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute bottom-2 left-4 flex items-center gap-2">
-                  <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold font-kanit px-2 py-1 rounded-md border border-white/30">มังคุด</span>
+            {/* Plot 2 */}
+            <div className="group bg-white/80 backdrop-blur-xl rounded-[2.5rem] border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
+              <div className="h-48 bg-slate-200 relative overflow-hidden">
+                <div className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-1000" style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuC2eHTWn37uOSt7MAXRwoW5luImaI2JQIvKGAMdB2dIvIggvxsOHBb99lbTXT5A0vNO_Tz1KkNJukBWy-4HKZFr17VARmTtDZMxs7NidHPXHjwjLMHh8C-diDCg-u4RAYpeKYGdAIoCwLV1N5A-hGi1ZARkdf8gS_flowwFlbsTLGqqccSQPBCC07TlyxDEV6aGhSvQUqiSTJJka6FOyRXNCAlBX13Y2DahFThnHYSWDF9-036vzJVZ6QVlhwJQEWF8mSBAGqTgXnRi')"}}></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                <div className="absolute top-4 left-4">
+                  <span className="bg-sky-500 text-white text-[10px] font-black px-3 py-1 rounded-lg uppercase tracking-widest">ให้น้ำ</span>
+                </div>
+                <div className="absolute bottom-4 left-5 flex items-center gap-2">
+                  <span className="text-white font-black tracking-wide">มังคุดเกรดพรีเมียม</span>
                 </div>
               </div>
-              <div className="p-4 flex-1 flex flex-col justify-between">
+              <div className="p-7 flex-1 flex flex-col justify-between">
                 <div>
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-[20px] font-semibold font-kanit text-[#1a1c1b]">แปลงมังคุด B</h3>
-                    <span className="bg-[#ffdeac] text-[#281900] text-xs font-semibold font-kanit px-2 py-1 rounded-full shadow-sm">ให้น้ำ</span>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2 mb-4">
-                    <div className="bg-[#f4f4f1] p-2 rounded-lg flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[#6c4a00] text-[20px]">grass</span>
-                      <div>
-                        <p className="text-[10px] font-semibold font-kanit text-[#42493e] uppercase">จำนวนต้น</p>
-                        <p className="text-base font-medium font-kanit text-[#1a1c1b]">80 ต้น</p>
-                      </div>
+                  <h3 className="text-2xl font-black text-slate-800 mb-5">แปลงมังคุด B2</h3>
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
+                      <span className="text-[10px] font-black text-slate-400 uppercase block mb-1">จำนวนต้น</span>
+                      <span className="text-xl font-black text-slate-800">80 <span className="text-sm font-normal">ต้น</span></span>
                     </div>
-                    <div className="bg-[#f4f4f1] p-2 rounded-lg flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[#77574d] text-[20px]">calendar_month</span>
-                      <div>
-                        <p className="text-[10px] font-semibold font-kanit text-[#42493e] uppercase">อายุพืช</p>
-                        <p className="text-base font-medium font-kanit text-[#1a1c1b]">3 ปี</p>
-                      </div>
+                    <div className="bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
+                      <span className="text-[10px] font-black text-slate-400 uppercase block mb-1">อายุพืช</span>
+                      <span className="text-xl font-black text-slate-800">3 <span className="text-sm font-normal">ปี</span></span>
                     </div>
                   </div>
                 </div>
-                <button className="w-full border-2 border-[#c2c9bb] text-[#1a1c1b] text-sm font-medium font-kanit py-2 rounded-lg hover:bg-[#f4f4f1] transition-colors flex justify-center items-center gap-1">
-                  รายละเอียด <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                <button className="w-full py-4 bg-slate-50 rounded-2xl text-slate-600 font-bold flex items-center justify-center gap-2 hover:bg-emerald-600 hover:text-white transition-all duration-300 group/btn cursor-pointer">
+                  ดูรายงานเชิงลึก
+                  <span className="material-symbols-outlined text-xl group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
                 </button>
               </div>
             </div>
 
-            {/* Mixed Plot */}
-            <div className="bg-white rounded-xl border border-[#e2e3e0] shadow-[0_4px_16px_rgba(45,90,39,0.06)] overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-300 md:col-span-2">
-              <div className="flex flex-col md:flex-row h-full">
-                <div className="h-32 md:h-auto md:w-1/3 bg-cover bg-center relative" style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_tF7FYY2D1wjUrF8fTEr9LidvKAZlZyqi4AefyaUkxQvPZdqcXfikgLfNRXFS_DZJiIG-UZKRF6ciuhPs2yCN4vpnFLiBKBhsiIvEsqI3XrkxXieBptR8S53bVvL8Svx1csUzoc_2oNl9Ydsr8U0tgBzcxY9AM66toCiZobEG4q6uoEQTr-R0Br-ghO7gTJS-JQSq3DGDfBsrj_Lwgc8iAgvxfd_dst2FK4VAQOdrth0XmEQkNkbwd6XV1RqboA_ENMqA79qy-Xo-')"}}>
-                  <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-2 left-4 flex items-center gap-2">
-                    <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold font-kanit px-2 py-1 rounded-md border border-white/30">สวนผสม</span>
-                  </div>
-                </div>
-                <div className="p-4 flex-1 flex flex-col justify-between">
-                  <div>
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-[20px] font-semibold font-kanit text-[#1a1c1b]">แปลงผสม C (กล้วย, เงาะ)</h3>
-                      <span className="bg-[#ffdad6] text-[#93000a] text-xs font-semibold font-kanit px-2 py-1 rounded-full shadow-sm">ต้องดูแล</span>
-                    </div>
-                    <div className="grid grid-cols-2 gap-2 mb-4">
-                      <div className="bg-[#f4f4f1] p-2 rounded-lg flex items-center gap-2">
-                        <span className="material-symbols-outlined text-[#6c4a00] text-[20px]">grass</span>
-                        <div>
-                          <p className="text-[10px] font-semibold font-kanit text-[#42493e] uppercase">จำนวนต้น</p>
-                          <p className="text-base font-medium font-kanit text-[#1a1c1b]">200 ต้น</p>
-                        </div>
-                      </div>
-                      <div className="bg-[#f4f4f1] p-2 rounded-lg flex items-center gap-2">
-                        <span className="material-symbols-outlined text-[#77574d] text-[20px]">calendar_month</span>
-                        <div>
-                          <p className="text-[10px] font-semibold font-kanit text-[#42493e] uppercase">อายุพืช</p>
-                          <p className="text-base font-medium font-kanit text-[#1a1c1b]">1-2 ปี</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <button className="w-full md:w-auto self-end border-2 border-[#c2c9bb] text-[#1a1c1b] text-sm font-medium font-kanit px-4 py-2 rounded-lg hover:bg-[#f4f4f1] transition-colors flex justify-center items-center gap-1">
-                    รายละเอียด <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-                  </button>
-                </div>
+            {/* Add Plot Empty State Card */}
+            <button className="group bg-slate-100/50 hover:bg-white rounded-[2.5rem] border-4 border-dashed border-slate-200 hover:border-emerald-400/50 flex flex-col items-center justify-center p-8 transition-all duration-500 min-h-[400px] cursor-pointer">
+              <div className="size-20 bg-white shadow-xl rounded-[2rem] flex items-center justify-center text-slate-300 group-hover:text-emerald-500 group-hover:scale-110 transition-all duration-500 mb-6">
+                <span className="material-symbols-outlined text-[40px]">add_location_alt</span>
               </div>
-            </div>
+              <span className="text-2xl font-black text-slate-400 group-hover:text-slate-800 transition-colors">เพิ่มแปลงใหม่</span>
+            </button>
           </div>
         </section>
 
-        {/* Settings & Actions */}
-        <section className="space-y-2 mt-8">
-          <div className="bg-white rounded-xl border border-[#e2e3e0] shadow-sm overflow-hidden divide-y divide-[#e2e3e0]">
-            <a className="flex items-center p-4 hover:bg-[#f4f4f1] transition-colors" href="#">
-              <span className="material-symbols-outlined text-[#77574d] text-[24px] mr-4">settings</span>
-              <span className="text-base font-kanit text-[#1a1c1b] flex-1">ตั้งค่าระบบ</span>
-              <span className="material-symbols-outlined text-[#72796e] text-[20px]">chevron_right</span>
-            </a>
-            <a className="flex items-center p-4 hover:bg-[#f4f4f1] transition-colors" href="#">
-              <span className="material-symbols-outlined text-[#77574d] text-[24px] mr-4">help_center</span>
-              <span className="text-base font-kanit text-[#1a1c1b] flex-1">ศูนย์ช่วยเหลือ</span>
-              <span className="material-symbols-outlined text-[#72796e] text-[20px]">chevron_right</span>
-            </a>
+        {/* Menu & Settings */}
+        <section className="space-y-6">
+          <h2 className="text-2xl font-black text-slate-800 tracking-tight px-2">การตั้งค่าส่วนตัว</h2>
+          <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white overflow-hidden p-3 space-y-2">
+            {[
+              { icon: 'settings', label: 'ตั้งค่าระบบและบัญชี', color: 'bg-slate-100 text-slate-600' },
+              { icon: 'share_location', label: 'จัดการสิทธิ์การเข้าถึงแปลง', color: 'bg-emerald-50 text-emerald-600' },
+              { icon: 'help_center', label: 'ศูนย์ช่วยเหลือและซัพพอร์ต', color: 'bg-teal-50 text-teal-600' },
+              { icon: 'verified_user', label: 'ความเป็นส่วนตัวและความปลอดภัย', color: 'bg-sky-50 text-sky-600' },
+            ].map((item, idx) => (
+              <button key={idx} className="w-full flex items-center p-5 rounded-[1.5rem] hover:bg-slate-50 transition-all group cursor-pointer">
+                <div className={`size-12 rounded-2xl ${item.color} flex items-center justify-center mr-5 group-hover:scale-110 transition-transform`}>
+                  <span className="material-symbols-outlined text-[24px]">{item.icon}</span>
+                </div>
+                <span className="text-lg font-bold text-slate-700 flex-1 text-left">{item.label}</span>
+                <span className="material-symbols-outlined text-slate-300 group-hover:translate-x-1 transition-transform">chevron_right</span>
+              </button>
+            ))}
           </div>
-          <button className="w-full bg-[#ffdad6]/50 text-[#93000a] text-sm font-medium font-kanit py-4 rounded-xl hover:bg-[#ffdad6] transition-colors flex justify-center items-center gap-2 border border-[#ba1a1a]/20 mt-4">
-            <span className="material-symbols-outlined text-[20px]">logout</span>
+          
+          <button className="w-full py-5 rounded-[2rem] bg-rose-50 text-rose-600 font-black text-xl hover:bg-rose-600 hover:text-white transition-all duration-300 shadow-xl shadow-rose-900/5 mt-6 flex items-center justify-center gap-3 active:scale-[0.98] cursor-pointer">
+            <span className="material-symbols-outlined text-2xl">logout</span>
             ออกจากระบบ
           </button>
         </section>
       </main>
 
       <BottomNavBar />
-    </>
+    </div>
   );
 }
