@@ -1,172 +1,157 @@
+"use client";
+
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { BottomNavBar } from '@/components/layout/BottomNavBar';
 
 export default function Knowledge() {
+  const router = useRouter();
+
   return (
-    <>
-      {/* Desktop Page Header */}
-      <header className="hidden lg:flex items-center justify-between px-8 py-6 border-b border-zinc-100 bg-white/80 backdrop-blur-md sticky top-0 z-10">
-        <div>
-          <h1 className="text-2xl font-bold text-emerald-700 tracking-tight">คลังความรู้</h1>
-          <p className="text-sm text-slate-500 font-medium mt-0.5">บทความและข้อมูลสำหรับชาวสวนมืออาชีพ</p>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-[#f2f8f5] to-slate-100 pb-32 relative overflow-hidden font-kanit text-slate-800">
+      {/* Decorative Background */}
+      <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-emerald-500/5 to-transparent pointer-events-none"></div>
+
+      {/* Header */}
+      <header className="sticky top-0 z-30 px-6 h-20 flex items-center justify-between backdrop-blur-xl bg-white/60 border-b border-white/40 shadow-sm">
+        <div className="flex items-center gap-4">
+          <button
+            onClick={() => router.back()}
+            className="size-10 rounded-xl bg-white shadow-sm border border-slate-200/60 hover:bg-slate-50 flex items-center justify-center transition-all text-slate-600 active:scale-90"
+          >
+            <span className="material-symbols-outlined">arrow_back</span>
+          </button>
+          <div>
+            <h1 className="text-xl font-black text-slate-800 tracking-tight leading-none">คลังความรู้</h1>
+            <p className="text-[10px] font-black text-slate-600 uppercase tracking-[0.2em] mt-1">ห้องสมุดชาวสวน</p>
+          </div>
         </div>
-        <button className="active:scale-95 transition-all hover:opacity-75">
-          <span className="material-symbols-outlined text-zinc-500 text-[28px]">notifications</span>
+        <button className="size-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-emerald-500 transition-all shadow-sm active:scale-90">
+          <span className="material-symbols-outlined">notifications</span>
         </button>
       </header>
 
-      {/* Mobile TopAppBar */}
-      <header className="lg:hidden fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-zinc-100 shadow-sm">
-        <div className="flex items-center justify-between w-full px-6 h-16">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#2d5a27]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                alt="Profile"
-                className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAABf_vd7BmMFqJRqk8fLj2LDt5YLqHgyk29VsFD80gYkYSrjQN_gRw4r8mPyNAM0FDsztCV08J7GNEAQ30sCXA2mmiysTpfw2dnzlx_UDnL32wXLc7QlzZYXCiQ48_LOB5-tSIvJxHthMumwltnpbeYSjPaVZxs1XIxi-Lm_bV7_C1naWpkK8Jre9HRS7t0_Yo7SnDtG51Ctondu_dZyLXD7Jr1WvekjvZEUMG4g3TRs_TD_1qQHhV2h2MtU_r9FI2BN5RBHA_h0pH"
-              />
-            </div>
-          </div>
-          <h1 className="text-[24px] font-semibold font-kanit text-emerald-700 tracking-tight">คลังความรู้</h1>
-          <button className="active:scale-95 transition-all hover:opacity-75">
-            <span className="material-symbols-outlined text-zinc-500">notifications</span>
-          </button>
-        </div>
-      </header>
-
-      <main className="lg:px-8 lg:py-6 lg:max-w-7xl lg:mx-auto pt-20 px-6 max-w-4xl mx-auto pb-32">
+      <main className="max-w-7xl mx-auto px-6 py-8 relative z-10">
+        
         {/* Search Bar */}
-        <div className="relative mb-6">
-          <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-            <span className="material-symbols-outlined text-[#72796e]">search</span>
-          </div>
-          <input className="w-full bg-[#eeeeeb] border-none rounded-2xl py-4 pl-12 pr-4 text-base font-kanit focus:ring-2 focus:ring-[#2d5a27] transition-all" placeholder="ค้นหาบทความ..." type="text"/>
+        <div className="relative mb-8 group">
+          <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-600 group-focus-within:text-emerald-500 transition-colors">search</span>
+          <input 
+            className="w-full bg-white border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-sm font-bold text-slate-800 placeholder:text-slate-500 shadow-sm focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all" 
+            placeholder="ค้นหาบทความ, เทคนิคการเกษตร..." 
+            type="text"
+          />
         </div>
 
         {/* Category Filters */}
-        <div className="mb-6 overflow-x-auto no-scrollbar flex gap-3 pb-2">
-          <button className="whitespace-nowrap px-6 py-2.5 rounded-full bg-[#2d5a27] text-[#9dd090] text-sm font-medium font-kanit shadow-sm">ทั้งหมด</button>
-          <button className="whitespace-nowrap px-6 py-2.5 rounded-full bg-white border border-[#c2c9bb] text-[#42493e] text-sm font-medium font-kanit hover:bg-[#eeeeeb] transition-colors">การดูแลพืช</button>
-          <button className="whitespace-nowrap px-6 py-2.5 rounded-full bg-white border border-[#c2c9bb] text-[#42493e] text-sm font-medium font-kanit hover:bg-[#eeeeeb] transition-colors">ปุ๋ยและยา</button>
-          <button className="whitespace-nowrap px-6 py-2.5 rounded-full bg-white border border-[#c2c9bb] text-[#42493e] text-sm font-medium font-kanit hover:bg-[#eeeeeb] transition-colors">ข่าวสาร</button>
-          <button className="whitespace-nowrap px-6 py-2.5 rounded-full bg-white border border-[#c2c9bb] text-[#42493e] text-sm font-medium font-kanit hover:bg-[#eeeeeb] transition-colors">เทคโนโลยี</button>
+        <div className="mb-10 overflow-x-auto no-scrollbar flex gap-2 pb-2">
+          {['ทั้งหมด', 'การดูแลพืช', 'ปุ๋ยและยา', 'ข่าวสาร', 'เทคโนโลยี'].map((label, i) => (
+            <button 
+              key={label}
+              className={`whitespace-nowrap px-6 py-2 rounded-full font-black text-xs uppercase tracking-widest transition-all ${
+                i === 0 
+                  ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/20' 
+                  : 'bg-white border border-slate-200 text-slate-600 hover:text-emerald-600 hover:bg-emerald-50'
+              }`}
+            >
+              {label}
+            </button>
+          ))}
         </div>
 
-        <div className="lg:grid lg:grid-cols-3 lg:gap-8">
+        <div className="lg:grid lg:grid-cols-3 lg:gap-10">
+          
           {/* Main Content */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-10">
+            
             {/* Featured Article */}
-            <section>
-              <div className="relative w-full h-64 lg:h-72 rounded-3xl overflow-hidden shadow-lg group">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
+            <section className="relative group cursor-pointer overflow-hidden rounded-[2.5rem] shadow-2xl shadow-emerald-900/10 active:scale-[0.98] transition-all">
+              <div className="aspect-[16/9] md:aspect-[21/9]">
                 <img
                   alt="Featured Article"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd4wfhiRfYszksdtn5H_bsbPlEOYZimgd-4eGhKGYqZYf3f93l4v8w-OvnGdKWJucXemjg-gDoZdCRJAmTuVWw4TURKw3GHnqqOIgN754Tf0j0EOQBbRIBiqIS54h066Wfmm0shA8COfIaOOHp9Dpo0pw82cS8tLGfdnSDG0hw7WhlH8geR_hvP1bs-AWhUU4jOIWMMWXn8AmBGZU1x5UPtXiyQHhuJQ1PQt6zqiUN2KlOg58exiftJCVOpNDvmXWi1snVEDoIPkzn"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                <div className="absolute bottom-0 p-6">
-                  <span className="bg-[#6c4a00] text-[#ffb51e] px-3 py-1 rounded-full text-xs font-semibold font-kanit mb-3 inline-block">บทความแนะนำ</span>
-                  <h2 className="text-white text-[22px] font-semibold font-kanit leading-tight mb-2">เทคนิคการบริหารจัดการน้ำในสวนทุเรียนช่วงฤดูแล้ง</h2>
-                  <p className="text-zinc-300 text-base font-kanit line-clamp-1">เรียนรู้วิธีการจัดทำระบบให้น้ำอย่างมีประสิทธิภาพเพื่อผลผลิตที่มีคุณภาพสูง</p>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 left-0 w-full p-8">
+                <span className="bg-emerald-500 text-white px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest mb-4 inline-block shadow-lg shadow-emerald-500/20">บทความแนะนำ</span>
+                <h2 className="text-white text-2xl md:text-3xl font-black leading-tight tracking-tight mb-3">เทคนิคการบริหารจัดการน้ำในสวนทุเรียนช่วงฤดูแล้ง</h2>
+                <p className="text-slate-200 text-sm font-medium line-clamp-2 max-w-xl">เรียนรู้วิธีการจัดทำระบบให้น้ำอย่างมีประสิทธิภาพเพื่อผลผลิตที่มีคุณภาพสูงในสภาพอากาศที่แปรปรวน</p>
               </div>
             </section>
 
             {/* Article List */}
-            <section className="space-y-4">
-              <h3 className="text-[20px] font-semibold font-kanit text-[#1a1c1b]">บทความล่าสุด</h3>
-
-              {/* Article Card 1 */}
-              <div className="flex gap-4 p-4 rounded-3xl bg-white border border-[#e2e3e0] shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-                <div className="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img alt="Thumbnail" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAllyvPN0QERhLYxBkrDSSTfWMJVmMIEQ0cduvG5dt9dupjR0lCysa8IGdIlNnJTAUPjZlu-lKEzv6SIeeMBsHoAFKfEybJKiQpxAYikW9aNbSmzDZwtr3es-KJuxyWN2Is1HRBGLKGGxiVPubHL1JrTBZhvCUySyyhoIOGbMsTj_Cy9NTGkpWXHM8bzQQXE31x1eSwGRi9_wxYkcGzTftY_j4zfU2HYOJXrsB6T5feJLuMXz7Q-9WNK1J9ocp7UHYEsZ6g8VpIu3bB" />
-                </div>
-                <div className="flex flex-col justify-between py-1">
-                  <div>
-                    <span className="text-[#4f3500] text-xs font-semibold font-kanit mb-1 block">ปุ๋ยและยา</span>
-                    <h4 className="text-lg font-semibold font-kanit text-[#1a1c1b] line-clamp-2 leading-snug">5 สูตรปุ๋ยหมักชีวภาพที่ช่วยบำรุงหน้าดินอย่างยั่งยืน</h4>
-                  </div>
-                  <div className="flex items-center gap-4 text-zinc-400 text-xs font-semibold font-kanit">
-                    <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[14px]">schedule</span> 2 ชม. ที่แล้ว</span>
-                    <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[14px]">visibility</span> 1.2k</span>
-                  </div>
-                </div>
+            <section className="space-y-6">
+              <div className="flex items-center justify-between px-1">
+                <h3 className="text-xs font-black text-slate-600 uppercase tracking-[0.2em]">บทความล่าสุด</h3>
+                <span className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">ล่าสุดก่อน</span>
               </div>
 
-              {/* Article Card 2 */}
-              <div className="flex gap-4 p-4 rounded-3xl bg-white border border-[#e2e3e0] shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-                <div className="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img alt="Thumbnail" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRiLfpEwyhnzDIpTIIkM3EkS6bY5-YgUPwxu8fKqgSXNjQgPPNv2V-q_W6wWlg9YQp_a71m_wRDFUyBRQ-X9zeLNvXpO7_0eHy00Z00alKP3MKVhOHLRl04QD8bgkyJNaThnAxCJ6aYj5So-Ed15uDw52qmTeMYEY2QSsTx_1QqEhYTg42ZqOS_5UPPoCMF3eN0BbHSOD8GyRUE-D5J9HDZ56rd6owaFE4b6ML-QN9kGFQAImWrDD4XJV9epW2id0N0uMbbyq8bPX7" />
-                </div>
-                <div className="flex flex-col justify-between py-1">
-                  <div>
-                    <span className="text-[#4f3500] text-xs font-semibold font-kanit mb-1 block">การดูแลพืช</span>
-                    <h4 className="text-lg font-semibold font-kanit text-[#1a1c1b] line-clamp-2 leading-snug">วิธีการป้องกันและกำจัดเพลี้ยไฟในสวนมังคุดอย่างได้ผล</h4>
+              <div className="space-y-4">
+                {[
+                  { title: '5 สูตรปุ๋ยหมักชีวภาพที่ช่วยบำรุงหน้าดินอย่างยั่งยืน', category: 'ปุ๋ยและยา', time: '2 ชม. ที่แล้ว', view: '1.2k', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAllyvPN0QERhLYxBkrDSSTfWMJVmMIEQ0cduvG5dt9dupjR0lCysa8IGdIlNnJTAUPjZlu-lKEzv6SIeeMBsHoAFKfEybJKiQpxAYikW9aNbSmzDZwtr3es-KJuxyWN2Is1HRBGLKGGxiVPubHL1JrTBZhvCUySyyhoIOGbMsTj_Cy9NTGkpWXHM8bzQQXE31x1eSwGRi9_wxYkcGzTftY_j4zfU2HYOJXrsB6T5feJLuMXz7Q-9WNK1J9ocp7UHYEsZ6g8VpIu3bB' },
+                  { title: 'วิธีการป้องกันและกำจัดเพลี้ยไฟในสวนมังคุดอย่างได้ผล', category: 'การดูแลพืช', time: 'เมื่อวานนี้', view: '850', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCRiLfpEwyhnzDIpTIIkM3EkS6bY5-YgUPwxu8fKqgSXNjQgPPNv2V-q_W6wWlg9YQp_a71m_wRDFUyBRQ-X9zeLNvXpO7_0eHy00Z00alKP3MKVhOHLRl04QD8bgkyJNaThnAxCJ6aYj5So-Ed15uDw52qmTeMYEY2QSsTx_1QqEhYTg42ZqOS_5UPPoCMF3eN0BbHSOD8GyRUE-D5J9HDZ56rd6owaFE4b6ML-QN9kGFQAImWrDD4XJV9epW2id0N0uMbbyq8bPX7' },
+                  { title: 'เทรนด์ตลาดผลไม้ส่งออกปี 2567 ที่ชาวสวนควรรู้', category: 'ข่าวสาร', time: '2 วันที่แล้ว', view: '2.4k', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBnRHg95C2NWwhW29gnhqHpO5tzu6QmDruRpjeYOM8GPM4NWRZSD1NfeWzcvdSuqygbi_sDww2CiGgypiTbjx1_zcqScITNhP_5TvkoCLgUQQi61SaB5pm3Risa1qwhm7cybl1qrUtD3JSuUwSdOtZTF11c_DbQln52-3f7jv8olTYbxDUm25lQfMxGckSYmLboGCveISYDHMmvnNQZG3q5mTcer1mVn7AFnYCcoXT2yxhF1MRu_8thHCjxYVpcDVkYwf0dPaG798Up' }
+                ].map((post, idx) => (
+                  <div 
+                    key={idx} 
+                    className="flex gap-5 p-5 rounded-[2rem] bg-white/80 backdrop-blur-xl border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:scale-[1.01] transition-all cursor-pointer group"
+                  >
+                    <div className="size-24 rounded-2xl overflow-hidden shrink-0 border border-slate-100 group-hover:shadow-md transition-all">
+                      <img alt="Thumbnail" className="w-full h-full object-cover group-hover:scale-105 transition-transform" src={post.img} />
+                    </div>
+                    <div className="flex flex-col justify-between py-1 flex-1 min-w-0">
+                      <div>
+                        <span className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-1 block">{post.category}</span>
+                        <h4 className="text-base font-black text-slate-800 line-clamp-2 leading-tight tracking-tight group-hover:text-emerald-700 transition-colors">{post.title}</h4>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <span className="flex items-center gap-1.5 text-[10px] font-black text-slate-500 uppercase tracking-widest"><span className="material-symbols-outlined text-[14px]">schedule</span> {post.time}</span>
+                        <span className="flex items-center gap-1.5 text-[10px] font-black text-slate-500 uppercase tracking-widest"><span className="material-symbols-outlined text-[14px]">visibility</span> {post.view}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-4 text-zinc-400 text-xs font-semibold font-kanit">
-                    <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[14px]">schedule</span> เมื่อวานนี้</span>
-                    <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[14px]">visibility</span> 850</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Article Card 3 */}
-              <div className="flex gap-4 p-4 rounded-3xl bg-white border border-[#e2e3e0] shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-                <div className="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img alt="Thumbnail" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnRHg95C2NWwhW29gnhqHpO5tzu6QmDruRpjeYOM8GPM4NWRZSD1NfeWzcvdSuqygbi_sDww2CiGgypiTbjx1_zcqScITNhP_5TvkoCLgUQQi61SaB5pm3Risa1qwhm7cybl1qrUtD3JSuUwSdOtZTF11c_DbQln52-3f7jv8olTYbxDUm25lQfMxGckSYmLboGCveISYDHMmvnNQZG3q5mTcer1mVn7AFnYCcoXT2yxhF1MRu_8thHCjxYVpcDVkYwf0dPaG798Up" />
-                </div>
-                <div className="flex flex-col justify-between py-1">
-                  <div>
-                    <span className="text-[#4f3500] text-xs font-semibold font-kanit mb-1 block">ข่าวสาร</span>
-                    <h4 className="text-lg font-semibold font-kanit text-[#1a1c1b] line-clamp-2 leading-snug">เทรนด์ตลาดผลไม้ส่งออกปี 2567 ที่ชาวสวนควรรู้</h4>
-                  </div>
-                  <div className="flex items-center gap-4 text-zinc-400 text-xs font-semibold font-kanit">
-                    <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[14px]">schedule</span> 2 วันที่แล้ว</span>
-                    <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[14px]">visibility</span> 2.4k</span>
-                  </div>
-                </div>
+                ))}
               </div>
             </section>
           </div>
 
           {/* Right Sidebar - Desktop */}
-          <div className="hidden lg:block space-y-6">
-            {/* Recommended Topics */}
+          <div className="hidden lg:block space-y-10">
             <section>
-              <h3 className="text-lg font-semibold font-kanit text-[#1a1c1b] mb-4">หัวข้อที่คุณอาจสนใจ</h3>
+              <h3 className="text-xs font-black text-slate-600 uppercase tracking-[0.2em] mb-6 px-1">หัวข้อที่น่าสนใจ</h3>
               <div className="grid grid-cols-1 gap-4">
-                <div className="bg-[#bcf0ae] text-[#23501e] p-5 rounded-[1.5rem] flex items-center gap-4 cursor-pointer hover:brightness-95 transition-all">
-                  <span className="material-symbols-outlined text-4xl shrink-0">eco</span>
-                  <p className="text-sm font-bold font-kanit">เกษตรอินทรีย์แบบมืออาชีพ</p>
-                </div>
-                <div className="bg-[#fed3c7] text-[#795950] p-5 rounded-[1.5rem] flex items-center gap-4 cursor-pointer hover:brightness-95 transition-all">
-                  <span className="material-symbols-outlined text-4xl shrink-0">monitoring</span>
-                  <p className="text-sm font-bold font-kanit">การวิเคราะห์ต้นทุนและกำไร</p>
-                </div>
-                <div className="bg-[#dbeafe] text-[#1e40af] p-5 rounded-[1.5rem] flex items-center gap-4 cursor-pointer hover:brightness-95 transition-all">
-                  <span className="material-symbols-outlined text-4xl shrink-0">water_drop</span>
-                  <p className="text-sm font-bold font-kanit">ระบบชลประทานสมัยใหม่</p>
-                </div>
-                <div className="bg-[#fef9c3] text-[#854d0e] p-5 rounded-[1.5rem] flex items-center gap-4 cursor-pointer hover:brightness-95 transition-all">
-                  <span className="material-symbols-outlined text-4xl shrink-0">sunny</span>
-                  <p className="text-sm font-bold font-kanit">พยากรณ์อากาศเพื่อการเกษตร</p>
-                </div>
+                {[
+                  { label: 'เกษตรอินทรีย์', icon: 'eco', bg: 'bg-emerald-500', text: 'text-white' },
+                  { label: 'วิเคราะห์กำไร', icon: 'monitoring', bg: 'bg-amber-500', text: 'text-white' },
+                  { label: 'ระบบน้ำสมัยใหม่', icon: 'water_drop', bg: 'bg-sky-500', text: 'text-white' },
+                  { label: 'พยากรณ์อากาศ', icon: 'sunny', bg: 'bg-indigo-500', text: 'text-white' }
+                ].map((item) => (
+                  <div 
+                    key={item.label}
+                    className={`${item.bg} ${item.text} p-6 rounded-[2rem] flex items-center gap-4 cursor-pointer hover:scale-105 transition-all shadow-lg active:scale-95`}
+                  >
+                    <span className="material-symbols-outlined text-4xl shrink-0">{item.icon}</span>
+                    <p className="text-xs font-black uppercase tracking-widest">{item.label}</p>
+                  </div>
+                ))}
               </div>
             </section>
 
             {/* Trending */}
-            <section className="bg-white rounded-2xl border border-[#e2e3e0] shadow-sm p-5">
-              <h3 className="text-base font-semibold font-kanit text-[#1a1c1b] mb-3">กำลังนิยม 🔥</h3>
-              <div className="space-y-3">
-                {['วิธีปลูกทุเรียนในพื้นที่จำกัด', 'เทคนิคตัดแต่งกิ่งมังคุด', 'โรคระบาดที่ต้องระวังในฤดูฝน', 'เพิ่มผลผลิตด้วยปุ๋ยชีวภาพ'].map((t, i) => (
-                  <div key={t} className="flex items-start gap-3 cursor-pointer hover:bg-zinc-50 -mx-2 px-2 py-1 rounded-lg transition-colors">
-                    <span className="text-lg font-black text-zinc-200 w-5 shrink-0">{i + 1}</span>
-                    <p className="text-sm font-kanit text-[#1a1c1b] leading-snug">{t}</p>
+            <section className="bg-white border border-slate-100 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-8">
+              <h3 className="text-[10px] font-black text-slate-600 uppercase tracking-[0.2em] mb-6">Trending 🔥</h3>
+              <div className="space-y-5">
+                {[
+                  'วิธีปลูกทุเรียนในพื้นที่จำกัด', 
+                  'เทคนิคตัดแต่งกิ่งมังคุด', 
+                  'โรคระบาดที่ต้องระวังในฤดูฝน', 
+                  'เพิ่มผลผลิตด้วยปุ๋ยชีวภาพ'
+                ].map((t, i) => (
+                  <div key={t} className="flex items-start gap-4 cursor-pointer group">
+                    <span className="text-lg font-black text-slate-300 group-hover:text-emerald-500 transition-colors w-5 shrink-0">{i + 1}</span>
+                    <p className="text-xs font-black text-slate-600 uppercase tracking-widest leading-relaxed group-hover:text-slate-900 transition-colors">{t}</p>
                   </div>
                 ))}
               </div>
@@ -174,23 +159,23 @@ export default function Knowledge() {
           </div>
         </div>
 
-        {/* Recommended Topics - Mobile */}
+        {/* Mobile Recommended Topics */}
         <section className="mt-12 mb-8 lg:hidden">
-          <h3 className="text-[24px] font-semibold font-kanit text-[#1a1c1b] mb-6">หัวข้อที่คุณอาจสนใจ</h3>
+          <h3 className="text-xs font-black text-slate-600 uppercase tracking-[0.2em] mb-6">หัวข้อแนะนำ</h3>
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-[#bcf0ae] text-[#23501e] p-6 rounded-[2rem] flex flex-col justify-between min-h-[160px]">
+            <div className="bg-emerald-500 text-white p-6 rounded-[2rem] flex flex-col justify-between min-h-[160px] shadow-lg shadow-emerald-500/20">
               <span className="material-symbols-outlined text-4xl">eco</span>
-              <p className="text-sm font-bold font-kanit">เกษตรอินทรีย์แบบมืออาชีพ</p>
+              <p className="text-xs font-black uppercase tracking-widest">เกษตรอินทรีย์</p>
             </div>
-            <div className="bg-[#fed3c7] text-[#795950] p-6 rounded-[2rem] flex flex-col justify-between min-h-[160px]">
+            <div className="bg-amber-500 text-white p-6 rounded-[2rem] flex flex-col justify-between min-h-[160px] shadow-lg shadow-amber-500/20">
               <span className="material-symbols-outlined text-4xl">monitoring</span>
-              <p className="text-sm font-bold font-kanit">การวิเคราะห์ต้นทุนและกำไร</p>
+              <p className="text-xs font-black uppercase tracking-widest">วิเคราะห์กำไร</p>
             </div>
           </div>
         </section>
       </main>
 
       <BottomNavBar />
-    </>
+    </div>
   );
 }

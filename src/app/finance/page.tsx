@@ -316,11 +316,7 @@ export default function Finance() {
 
               {/* Submit */}
               <button onClick={saveTxn} disabled={!form.title || !form.amount}
-                className={`w-full py-4 rounded-2xl font-semibold font-kanit flex items-center justify-center gap-2 transition-all active:scale-[0.98] disabled:opacity-50 ${
-                  form.type === 'income'
-                    ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
-                    : 'bg-orange-600 hover:bg-orange-700 text-white'
-                }`}>
+                className={`w-full py-4 rounded-2xl font-bold font-kanit flex items-center justify-center gap-2 transition-all active:scale-[0.98] disabled:opacity-50 shadow-lg shadow-slate-900/10 bg-slate-900 hover:bg-emerald-800 text-white`}>
                 <span className="material-symbols-outlined text-[20px]">{editingId ? 'save' : 'add_circle'}</span>
                 {editingId ? 'บันทึกการแก้ไข' : (form.type === 'income' ? 'บันทึกรายรับ' : 'บันทึกรายจ่าย')}
               </button>
@@ -333,10 +329,10 @@ export default function Finance() {
       <header className="hidden lg:flex items-center justify-between px-8 py-6 border-b border-zinc-100 bg-white sticky top-0 z-30">
         <div>
           <h1 className="text-2xl font-bold text-[#1a1c1b] tracking-tight">สรุปบัญชีรายรับ-รายจ่าย</h1>
-          <p className="text-sm text-slate-500 font-medium mt-0.5">ยอดคงเหลือ ฿{fmt(balance)}</p>
+          <p className="text-sm text-slate-700 font-black mt-0.5">ยอดคงเหลือ ฿{fmt(balance)}</p>
         </div>
         <div className="flex items-center gap-3">
-          <button onClick={() => setShowModal(true)} className="px-4 py-2 bg-emerald-600 text-white text-sm font-semibold rounded-xl hover:bg-emerald-700 transition-colors flex items-center gap-2">
+          <button onClick={() => setShowModal(true)} className="px-4 py-2 bg-slate-900 text-white text-sm font-bold rounded-xl hover:bg-emerald-800 transition-all active:scale-95 shadow-lg shadow-slate-900/10 flex items-center gap-2 cursor-pointer">
             <span className="material-symbols-outlined text-[18px]">add</span>บันทึกรายการ
           </button>
         </div>
@@ -473,9 +469,9 @@ export default function Finance() {
             {/* Transaction List */}
             <div className="space-y-4">
               {Object.keys(grouped).length === 0 && (
-                <div className="text-center py-12 text-slate-400">
+                <div className="text-center py-12 text-slate-600">
                   <span className="material-symbols-outlined text-5xl">receipt_long</span>
-                  <p className="mt-2 font-kanit text-sm">ไม่มีรายการ</p>
+                  <p className="mt-2 font-kanit text-sm font-black">ไม่มีรายการ</p>
                 </div>
               )}
               {Object.entries(grouped).map(([date, items]) => (
@@ -563,7 +559,7 @@ export default function Finance() {
               </div>
 
               <div className="mt-6">
-                <button onClick={() => setShowModal(true)} className="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-50 to-emerald-100/50 border border-emerald-200/50 text-emerald-700 text-sm font-bold font-kanit hover:from-emerald-100 hover:to-emerald-200/50 transition-all shadow-sm flex items-center justify-center gap-2 group">
+                <button onClick={() => setShowModal(true)} className="w-full py-3.5 rounded-xl bg-slate-900 text-white text-sm font-bold font-kanit hover:bg-emerald-800 transition-all shadow-lg shadow-slate-900/10 flex items-center justify-center gap-2 group cursor-pointer">
                   <span className="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">add_circle</span>
                   บันทึกรายการใหม่
                 </button>
@@ -574,8 +570,8 @@ export default function Finance() {
       </main>
 
       {/* FAB */}
-      <button onClick={() => setShowModal(true)} className="fixed bottom-24 right-6 lg:bottom-8 lg:right-8 w-14 h-14 bg-emerald-600 text-white rounded-2xl shadow-xl flex items-center justify-center active:scale-90 transition-transform z-40 hover:bg-emerald-700">
-        <span className="material-symbols-outlined text-3xl">add</span>
+      <button onClick={() => setShowModal(true)} className="fixed bottom-24 right-6 lg:bottom-8 lg:right-8 w-14 h-14 bg-slate-900 text-white rounded-2xl shadow-2xl shadow-slate-900/30 flex items-center justify-center active:scale-90 transition-transform z-40 hover:bg-emerald-800 cursor-pointer">
+        <span className="material-symbols-outlined text-3xl font-black">add</span>
       </button>
 
       <BottomNavBar />

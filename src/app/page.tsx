@@ -86,239 +86,272 @@ export default function Home() {
 
   // Temperature logic 
   const temp = 32;
-  const tempColor = temp >= 33 ? 'text-red-500' : temp >= 30 ? 'text-orange-500' : temp >= 25 ? 'text-emerald-500' : 'text-blue-500';
-  const weatherBg = temp >= 33 ? 'bg-red-50/80' : temp >= 30 ? 'bg-orange-50/80' : temp >= 25 ? 'bg-emerald-50/80' : 'bg-blue-50/80';
+  const tempBg = 'bg-white/95';
+  const tempBorder = temp > 33 ? 'border-rose-200' : temp > 28 ? 'border-orange-200' : 'border-sky-200';
+  const tempText = temp > 33 ? 'text-rose-600' : temp > 28 ? 'text-orange-600' : 'text-sky-600';
+  const tempIconBg = temp > 33 ? 'bg-rose-50' : temp > 28 ? 'bg-orange-50' : 'bg-sky-50';
 
   return (
-    <div className="min-h-screen bg-slate-50 font-kanit">
-      
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-[#f2f8f5] to-slate-100 font-kanit relative overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-emerald-500/5 to-transparent pointer-events-none"></div>
+      <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none"></div>
+
       {/* Mobile Header */}
-      <header className="lg:hidden flex items-center justify-between px-5 py-4 bg-white sticky top-0 z-50 shadow-sm border-b border-slate-100">
+      <header className="lg:hidden flex items-center justify-between px-5 py-4 bg-white/60 backdrop-blur-xl sticky top-0 z-50 border-b border-white/40 shadow-sm">
         <div className="flex items-center gap-3">
-          <div className="size-10 rounded-full bg-slate-900 flex items-center justify-center text-white">
+          <div className="size-10 rounded-xl bg-slate-900 flex items-center justify-center text-white shadow-lg shadow-slate-900/10">
             <span className="material-symbols-outlined text-[20px]">park</span>
           </div>
           <div>
-            <h1 className="text-lg font-bold text-slate-900 leading-tight tracking-tight">สวัสดี สมชาย</h1>
-            <p className="text-xs text-slate-500 font-medium mt-0.5">สวนร่มเย็น จ.จันทบุรี</p>
+            <h1 className="text-lg font-black text-slate-900 leading-tight tracking-tight">สวัสดี สมชาย</h1>
+            <p className="text-xs text-slate-700 font-bold mt-0.5 uppercase tracking-wider">สวนร่มเย็น จ.จันทบุรี</p>
           </div>
         </div>
         <Link href="/account" className="active:scale-95 transition-transform">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img alt="User Profile" className="size-10 rounded-full border-2 border-slate-100 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClGTGqrgkOWcQbNUV5Ph47FPZ0jczyuChHb6i2pP6jhLifdxteY36dNl2lcCC8LVnC6-U_pdncI3h5iBdvwiGcSPiC93Kfr5sRiT1lcBm7YsyVzoK8loUByOjFxHON5PRVw61avc_ij_ORT7sj3qhd-oY_UOPMw98qrWbKef_zhzspvyg1bVM7BLtQmto24qc_HsqqmNMOZ4NK0TU-O6bz5v7nLCWrdPegAuUX9cJjYsD3A6waOZlNyumZZHG7oapJa9AucEB3Qg2y" />
+          <img alt="User Profile" className="size-10 rounded-full border-2 border-white shadow-md object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClGTGqrgkOWcQbNUV5Ph47FPZ0jczyuChHb6i2pP6jhLifdxteY36dNl2lcCC8LVnC6-U_pdncI3h5iBdvwiGcSPiC93Kfr5sRiT1lcBm7YsyVzoK8loUByOjFxHON5PRVw61avc_ij_ORT7sj3qhd-oY_UOPMw98qrWbKef_zhzspvyg1bVM7BLtQmto24qc_HsqqmNMOZ4NK0TU-O6bz5v7nLCWrdPegAuUX9cJjYsD3A6waOZlNyumZZHG7oapJa9AucEB3Qg2y" />
         </Link>
       </header>
 
       {/* Desktop Header */}
-      <header className="hidden lg:flex items-center justify-between px-8 py-5 bg-white sticky top-0 z-50 border-b border-slate-200 shadow-sm">
+      <header className="hidden lg:flex items-center justify-between px-8 py-5 bg-white/60 backdrop-blur-xl sticky top-0 z-50 border-b border-white/40 shadow-sm">
         <div className="flex items-center gap-4">
-          <div className="size-10 rounded-full bg-slate-900 flex items-center justify-center text-white shadow-sm">
-            <span className="material-symbols-outlined text-[20px]">park</span>
+          <div className="size-12 rounded-2xl bg-slate-900 flex items-center justify-center text-white shadow-xl shadow-slate-900/20">
+            <span className="material-symbols-outlined text-[24px]">park</span>
           </div>
           <div>
-            <h1 className="text-xl font-extrabold text-slate-900 tracking-tight">สวัสดีตอนเช้า, สมชาย 🌿</h1>
-            <p className="text-xs text-slate-500 font-medium mt-0.5">ระบบจัดการสวนอัจฉริยะ • สวนร่มเย็น จ.จันทบุรี</p>
+            <h1 className="text-2xl font-black text-slate-900 tracking-tight">สวัสดีตอนเช้า, สมชาย 🌿</h1>
+            <p className="text-sm text-slate-700 font-black mt-0.5 uppercase tracking-widest">ระบบจัดการสวนอัจฉริยะ • จันทบุรี</p>
           </div>
         </div>
         <div className="flex items-center gap-4">
-          <Link 
+          <Link
             href="/activity-log/add"
-            className="hidden lg:flex items-center gap-2 px-4 py-2 bg-[#154212] text-white rounded-xl text-sm font-bold hover:bg-[#2d5a27] transition-all active:scale-95 shadow-sm"
+            className="flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-2xl text-sm font-black hover:bg-emerald-600 hover:shadow-lg hover:shadow-emerald-500/40 transition-all active:scale-95 shadow-xl shadow-slate-900/20"
           >
             <span className="material-symbols-outlined text-[20px]">add</span>
             บันทึกงานสวน
           </Link>
           <Link href="/account" className="hover:scale-105 transition-transform">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img alt="User Profile" className="size-10 rounded-full border-2 border-slate-200 object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClGTGqrgkOWcQbNUV5Ph47FPZ0jczyuChHb6i2pP6jhLifdxteY36dNl2lcCC8LVnC6-U_pdncI3h5iBdvwiGcSPiC93Kfr5sRiT1lcBm7YsyVzoK8loUByOjFxHON5PRVw61avc_ij_ORT7sj3qhd-oY_UOPMw98qrWbKef_zhzspvyg1bVM7BLtQmto24qc_HsqqmNMOZ4NK0TU-O6bz5v7nLCWrdPegAuUX9cJjYsD3A6waOZlNyumZZHG7oapJa9AucEB3Qg2y" />
+            <img alt="User Profile" className="size-12 rounded-full border-4 border-white object-cover shadow-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClGTGqrgkOWcQbNUV5Ph47FPZ0jczyuChHb6i2pP6jhLifdxteY36dNl2lcCC8LVnC6-U_pdncI3h5iBdvwiGcSPiC93Kfr5sRiT1lcBm7YsyVzoK8loUByOjFxHON5PRVw61avc_ij_ORT7sj3qhd-oY_UOPMw98qrWbKef_zhzspvyg1bVM7BLtQmto24qc_HsqqmNMOZ4NK0TU-O6bz5v7nLCWrdPegAuUX9cJjYsD3A6waOZlNyumZZHG7oapJa9AucEB3Qg2y" />
           </Link>
         </div>
       </header>
 
-      <main className="flex flex-col gap-5 px-5 lg:px-8 mt-5 lg:mt-6 pb-28 max-w-[1200px] mx-auto">
-        
-        {/* TOP ROW: Weather and Stats */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          
-          {/* Weather Widget */}
-          <section className={`rounded-[1.5rem] p-4 shadow-sm border border-slate-100 transition-colors flex items-center justify-between gap-4 ${weatherBg} h-full`}>
-             <div className="flex items-center gap-3 lg:gap-4">
-                <div className={`flex items-center justify-center size-12 lg:size-14 rounded-xl lg:rounded-2xl bg-white shadow-sm shrink-0`}>
-                  <span className={`material-symbols-outlined text-[28px] lg:text-[32px] ${tempColor}`} style={{fontVariationSettings: '"FILL" 1'}}>light_mode</span>
-                </div>
-                <div className="flex flex-col">
-                  <div className="flex items-baseline gap-1 lg:gap-2">
-                    <span className={`text-3xl lg:text-4xl font-black tracking-tight ${tempColor}`}>{temp}°<span className="text-xl lg:text-2xl ml-0.5">C</span></span>
-                    <span className="text-xs lg:text-sm font-bold text-slate-500 uppercase ml-1">แดดจัด</span>
-                  </div>
-                  <div className="flex items-center gap-2 lg:gap-3 text-[10px] lg:text-xs font-semibold text-slate-500 mt-0.5">
-                    <span className="flex items-center gap-0.5"><span className="material-symbols-outlined text-[12px] lg:text-[14px]">humidity_percentage</span> 65%</span>
-                    <span className="flex items-center gap-0.5"><span className="material-symbols-outlined text-[12px] lg:text-[14px]">air</span> 12 km/h</span>
-                  </div>
-                </div>
-             </div>
+      <main className="flex flex-col gap-6 px-5 lg:px-8 mt-6 pb-28 max-w-[1280px] mx-auto relative z-10">
 
-             {/* Forecast inline */}
-             <div className="flex flex-col justify-center gap-1.5 border-l border-slate-200/60 pl-4 lg:pl-5 shrink-0">
-                <div className="flex items-center justify-between gap-2 lg:gap-3">
-                   <span className="text-[10px] lg:text-xs font-bold text-slate-400 w-4">พ.</span>
-                   <span className="material-symbols-outlined text-[14px] lg:text-[16px] text-sky-500" style={{fontVariationSettings: '"FILL" 1'}}>partly_cloudy_day</span>
-                   <span className="text-xs lg:text-sm font-bold text-slate-700">31°</span>
+        {/* TOP ROW: Bento Command Center */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3">
+          {/* Weather Command (High Contrast Clean) */}
+          <section className={`${tempBg} rounded-[2.5rem] p-5 shadow-xl border ${tempBorder} flex items-center justify-between group h-full lg:col-span-2 relative overflow-hidden transition-all duration-500 hover:shadow-2xl`}>
+            <div className="relative z-10 flex items-center gap-5">
+              <div className={`size-20 rounded-3xl ${tempIconBg} flex items-center justify-center`}>
+                <span className={`material-symbols-outlined text-[42px] ${tempText}`} style={{fontVariationSettings: '"FILL" 1'}}>wb_sunny</span>
+              </div>
+              <div className="flex flex-col">
+                <div className="flex items-baseline gap-1">
+                  <span className={`text-5xl font-black tracking-tighter ${tempText}`}>{temp}°</span>
+                  <span className={`text-xl font-bold text-slate-400`}>C</span>
                 </div>
-                <div className="flex items-center justify-between gap-2 lg:gap-3">
-                   <span className="text-[10px] lg:text-xs font-bold text-slate-400 w-4">พฤ.</span>
-                   <span className="material-symbols-outlined text-[14px] lg:text-[16px] text-slate-400" style={{fontVariationSettings: '"FILL" 1'}}>cloud</span>
-                   <span className="text-xs lg:text-sm font-bold text-slate-700">30°</span>
+                <span className="text-[10px] font-black text-slate-800 uppercase tracking-[0.3em]">ท้องฟ้าแจ่มใส</span>
+              </div>
+            </div>
+            
+            <div className="relative z-10 hidden sm:flex items-center gap-8 pr-4 border-l border-slate-100 pl-6">
+              {[
+                { day: 'พ.', t: '31°', i: 'partly_cloudy_day' },
+                { day: 'พฤ.', t: '30°', i: 'cloud' }
+              ].map((w, idx) => (
+                <div key={idx} className="flex flex-col items-center">
+                  <span className="text-[9px] font-black text-slate-400 uppercase mb-2">{w.day}</span>
+                  <span className={`material-symbols-outlined text-[24px] ${tempText} opacity-40`} style={{fontVariationSettings: '"FILL" 1'}}>{w.i}</span>
+                  <span className="text-sm font-black text-slate-900 mt-1">{w.t}</span>
                 </div>
-             </div>
+              ))}
+            </div>
           </section>
 
-          {/* Compact Stats Grid */}
-          <section className="grid grid-cols-2 gap-3 h-full">
-            <Link href="/harvest" className="bg-emerald-500 rounded-[1.5rem] p-4 flex flex-col justify-center gap-2 lg:gap-3 active:scale-[0.98] transition-transform relative overflow-hidden shadow-sm min-h-[112px]">
-              <div className="absolute -right-2 -bottom-2 text-emerald-400 opacity-40">
-                <span className="material-symbols-outlined text-[64px] lg:text-[80px]" style={{fontVariationSettings: '"FILL" 1'}}>agriculture</span>
-              </div>
-              <div className="relative z-10 flex items-center gap-1 text-emerald-50">
-                <span className="material-symbols-outlined text-[14px] lg:text-[16px]">trending_up</span>
-                <span className="text-[10px] lg:text-xs font-bold uppercase tracking-wider">ผลผลิตเดือนนี้</span>
-              </div>
-              <div className="relative z-10">
-                <p className="text-2xl lg:text-3xl font-black text-white tracking-tight leading-none">2,400 <span className="text-[10px] lg:text-xs font-bold text-emerald-100 uppercase">กก.</span></p>
-              </div>
-            </Link>
-            <Link href="/finance" className="bg-slate-900 rounded-[1.5rem] p-4 flex flex-col justify-center gap-2 lg:gap-3 active:scale-[0.98] transition-transform relative overflow-hidden shadow-sm min-h-[112px]">
-              <div className="absolute -right-2 -bottom-2 text-slate-800 opacity-50">
-                <span className="material-symbols-outlined text-[64px] lg:text-[80px]" style={{fontVariationSettings: '"FILL" 1'}}>payments</span>
-              </div>
-              <div className="relative z-10 flex items-center gap-1 text-slate-300">
-                <span className="material-symbols-outlined text-[14px] lg:text-[16px]">account_balance_wallet</span>
-                <span className="text-[10px] lg:text-xs font-bold uppercase tracking-wider">รายได้เดือนนี้</span>
-              </div>
-              <div className="relative z-10">
-                <p className="text-2xl lg:text-3xl font-black text-white tracking-tight leading-none">฿45.2<span className="text-sm font-bold text-slate-400">k</span></p>
-              </div>
-            </Link>
-          </section>
+          {/* Finance Command (Amber/Gold) */}
+          <Link href="/finance" className="bg-amber-500 rounded-[2.5rem] p-5 shadow-xl border border-amber-400 flex flex-col items-center justify-center relative overflow-hidden group active:scale-[0.98] transition-all hover:-translate-y-1 h-full lg:col-span-1 text-white">
+            <span className="text-[10px] font-black text-white uppercase tracking-[0.3em] mb-2">การเงิน</span>
+            <div className="flex items-baseline gap-1">
+              <span className="text-5xl font-black text-white tracking-tighter leading-none">9,300</span>
+              <span className="text-lg font-bold text-white">฿</span>
+            </div>
+          </Link>
 
+          {/* Harvest Command (Emerald Green) */}
+          <Link href="/harvest" className="bg-emerald-500 rounded-[2.5rem] p-5 shadow-xl border border-emerald-400 flex flex-col items-center justify-center relative overflow-hidden group active:scale-[0.98] transition-all hover:-translate-y-1 h-full lg:col-span-1 text-white">
+            <span className="text-[10px] font-black text-white uppercase tracking-[0.3em] mb-2">ผลผลิต</span>
+            <div className="flex items-baseline gap-1">
+              <span className="text-5xl font-black tracking-tighter leading-none">2,400</span>
+              <span className="text-lg font-bold text-white">กก.</span>
+            </div>
+          </Link>
+
+          {/* Progress Command (Dark/Tasks) */}
+          <div className="bg-slate-900 rounded-[2.5rem] p-5 shadow-xl border border-slate-800 flex flex-col items-center justify-center relative overflow-hidden group h-full lg:col-span-1 text-white">
+            <span className="text-[10px] font-black text-white uppercase tracking-[0.3em] mb-2">งานวันนี้</span>
+            <div className="flex items-baseline gap-1">
+              <span className="text-5xl font-black text-white tracking-tighter leading-none">{doneCount}</span>
+              <span className="text-2xl font-bold text-white">/</span>
+              <span className="text-3xl font-black text-white tracking-tighter leading-none">{tasks.length}</span>
+            </div>
+          </div>
         </div>
 
         {/* BOTTOM ROW: Menu & Tasks */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-          
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
           {/* Urgent Tasks (Left on Desktop, Wider) */}
-          <section className="bg-white rounded-3xl shadow-sm border border-slate-100 flex flex-col lg:col-span-8 order-1">
-            <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between bg-white rounded-t-3xl">
-              <h2 className="text-lg font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
-                งานวันนี้
-                <span className="text-[11px] font-bold bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full">{doneCount}/{tasks.length}</span>
-              </h2>
-              <Link href="/planning" className="text-xs font-bold text-emerald-600 hover:text-emerald-700 transition-colors">จัดการงาน</Link>
+          <section className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] shadow-xl border border-white flex flex-col lg:col-span-8 order-1 overflow-hidden">
+            <div className="px-8 py-6 border-b border-slate-100 flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <h2 className="text-2xl font-black text-slate-800 tracking-tight">งานวันนี้</h2>
+                <div className={`flex items-center justify-center min-w-[70px] h-[40px] px-4 rounded-2xl border transition-all duration-500 shadow-lg ${doneCount === tasks.length
+                    ? 'bg-emerald-500 text-white border-emerald-400 shadow-emerald-500/20'
+                    : 'bg-rose-500 text-white border-rose-400 shadow-rose-500/20'
+                  }`}>
+                  <span className="text-xl font-black tracking-tighter leading-none">{doneCount}</span>
+                  <span className="text-xs font-bold mx-1">/</span>
+                  <span className="text-sm font-black tracking-tighter leading-none">{tasks.length}</span>
+                </div>
+              </div>
+              <Link href="/planning" className="text-xs font-black text-emerald-600 hover:text-emerald-700 transition-colors uppercase tracking-widest bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-100">จัดการงาน</Link>
             </div>
-            
-            {/* Tasks Container (No inner scroll) */}
-            <div className="p-4">
-              <div className="flex flex-col gap-3">
+
+            <div className="p-6">
+              <div className="flex flex-col gap-4">
                 {tasks
                   .slice()
                   .sort((a, b) => (a.done === b.done ? 0 : a.done ? 1 : -1))
                   .map((task) => (
-                  <div 
-                    key={task.id} 
-                    onClick={() => toggleTask(task.id)}
-                    className={`rounded-2xl p-3 lg:p-4 flex items-center gap-3 lg:gap-4 transition-all duration-300 border group cursor-pointer active:scale-[0.99] ${
-                      task.done
-                        ? 'border-slate-100 bg-slate-50'
-                        : task.urgent
-                        ? 'border-orange-100 bg-orange-50/50 shadow-sm'
-                        : 'border-slate-100 bg-white shadow-sm hover:border-emerald-200'
-                    }`}
-                  >
-                    {/* Task Content */}
-                    <div className="flex-1 min-w-0 flex items-center gap-3 lg:gap-4">
-                      {/* Urgent indicator */}
-                      {task.urgent && !task.done && (
-                        <div className="w-1.5 h-10 rounded-full bg-orange-500 shrink-0"></div>
-                      )}
-
-                      <div className={`size-10 lg:size-12 rounded-xl flex items-center justify-center shrink-0 ${task.done ? 'bg-slate-200' : task.iconBg}`}>
-                        <span
-                          className={`material-symbols-outlined text-[20px] lg:text-[24px] ${task.done ? 'text-slate-500' : task.iconColor}`}
-                          style={{fontVariationSettings: '"FILL" 1'}}
-                        >
-                          {task.icon}
-                        </span>
-                      </div>
-
-                      <div className="flex-1 min-w-0 flex flex-col">
-                        <span className={`text-sm md:text-base font-bold truncate ${task.done ? 'line-through text-slate-400' : 'text-slate-800'}`}>
-                          {task.title}
-                        </span>
-                        <span className={`text-xs font-medium mt-0.5 truncate ${task.done ? 'text-slate-400' : task.urgent ? 'text-orange-600' : 'text-slate-500'}`}>
-                          {task.done ? '✓ เสร็จสิ้นแล้ว' : task.subtitle}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Check indicator (Back to end) */}
                     <div
-                      className={`size-8 lg:size-10 rounded-full border-2 flex items-center justify-center transition-all shrink-0 ${
-                        task.done
-                          ? 'bg-emerald-500 border-emerald-500 text-white shadow-sm'
-                          : 'border-slate-200 bg-white group-hover:border-emerald-500'
-                      }`}
+                      key={task.id}
+                      className={`rounded-[1.75rem] p-5 flex items-center gap-4 transition-all duration-300 border group ${task.done
+                          ? 'border-emerald-200 bg-emerald-50/50'
+                          : task.urgent
+                            ? 'border-rose-100 bg-rose-50/30 shadow-md'
+                            : 'border-slate-100 bg-white shadow-md hover:border-emerald-200'
+                        }`}
                     >
-                      {task.done && (
-                        <span className="material-symbols-outlined text-[18px] lg:text-[22px]" style={{fontVariationSettings: '"FILL" 1'}}>
-                          check
-                        </span>
-                      )}
+                      <div className="flex-1 min-w-0 flex items-center gap-4">
+                        <div className={`size-12 rounded-2xl flex items-center justify-center shrink-0 shadow-lg ${task.iconBg} shadow-${task.iconColor.split('-')[1]}-500/10`}>
+                          <span
+                            className={`material-symbols-outlined text-[24px] ${task.iconColor}`}
+                            style={{ fontVariationSettings: '"FILL" 1' }}
+                          >
+                            {task.icon}
+                          </span>
+                        </div>
+
+                        <div className="flex-1 min-w-0 flex flex-col">
+                          <span className={`text-base font-black tracking-tight truncate text-slate-800`}>
+                            {task.title}
+                          </span>
+                          <div className="flex items-center gap-2 mt-0.5">
+                            <span className={`text-xs font-bold truncate ${task.done ? 'text-emerald-600' : 'text-slate-600'}`}>
+                              {task.done ? '✓ เสร็จสิ้นแล้ว' : `${task.time} • ${task.desc}`}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-1">
+                        <button
+                          onClick={() => router.push('/planning')}
+                          className="size-9 rounded-xl flex items-center justify-center text-slate-600 hover:text-emerald-500 hover:bg-emerald-50 transition-all"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">edit</span>
+                        </button>
+                        <button
+                          onClick={() => toggleTask(task.id)}
+                          className={`size-9 rounded-xl flex items-center justify-center transition-all ${task.done
+                              ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/20'
+                              : 'bg-white border border-slate-200 text-slate-400 hover:border-emerald-500 hover:text-emerald-500'
+                            }`}
+                        >
+                          <span className="material-symbols-outlined text-[18px] font-black">{task.done ? 'done_all' : 'done'}</span>
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
             </div>
           </section>
 
           {/* Quick Menu (Right on Desktop, Narrower) */}
-          <section className="lg:col-span-4 order-2 self-start lg:sticky lg:top-6">
-            <div className="grid grid-cols-4 lg:grid-cols-2 gap-3 lg:gap-4">
-              <Link 
-                href="/planning/add"
-                className="bg-white rounded-[1.5rem] p-3 shadow-sm border border-slate-100 flex flex-col items-center justify-center gap-2 lg:gap-3 group active:scale-95 transition-transform hover:border-emerald-200 lg:py-6"
-              >
-                <div className="size-12 lg:size-14 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
-                  <span className="material-symbols-outlined text-[24px] lg:text-[28px]">assignment</span>
-                </div>
-                <span className="text-[11px] lg:text-sm font-bold text-slate-700">วางแผนงาน</span>
-              </Link>
-              <Link 
-                href="/activity-log/add"
-                className="bg-white rounded-[1.5rem] p-3 shadow-sm border border-slate-100 flex flex-col items-center justify-center gap-2 lg:gap-3 group active:scale-95 transition-transform hover:border-emerald-200 lg:py-6"
-              >
-                <div className="size-12 lg:size-14 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
-                  <span className="material-symbols-outlined text-[24px] lg:text-[28px]">edit_note</span>
-                </div>
-                <span className="text-[11px] lg:text-sm font-bold text-slate-700">บันทึก</span>
-              </Link>
-              <Link href="/harvest" className="bg-white rounded-[1.5rem] p-3 shadow-sm border border-slate-100 flex flex-col items-center justify-center gap-2 lg:gap-3 group active:scale-95 transition-transform hover:border-amber-200 lg:py-6">
-                <div className="size-12 lg:size-14 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
-                  <span className="material-symbols-outlined text-[24px] lg:text-[28px]">agriculture</span>
-                </div>
-                <span className="text-[11px] lg:text-sm font-bold text-slate-700">เก็บเกี่ยว</span>
-              </Link>
-              <Link href="/finance" className="bg-white rounded-[1.5rem] p-3 shadow-sm border border-slate-100 flex flex-col items-center justify-center gap-2 lg:gap-3 group active:scale-95 transition-transform hover:border-rose-200 lg:py-6">
-                <div className="size-12 lg:size-14 bg-rose-50 rounded-xl flex items-center justify-center text-rose-600 group-hover:bg-rose-500 group-hover:text-white transition-colors duration-300">
-                  <span className="material-symbols-outlined text-[24px] lg:text-[28px]">shopping_cart</span>
-                </div>
-                <span className="text-[11px] lg:text-sm font-bold text-slate-700">การเงิน</span>
-              </Link>
+          <section className="lg:col-span-4 order-2 self-start lg:sticky lg:top-24">
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { 
+                  href: '/planning/add', 
+                  icon: 'assignment', 
+                  label: 'วางแผนงาน', 
+                  bg: 'bg-emerald-50', 
+                  text: 'text-emerald-600', 
+                  hoverBg: 'group-hover:bg-emerald-500', 
+                  shadow: 'shadow-emerald-500/10' 
+                },
+                { 
+                  href: '/activity-log/add', 
+                  icon: 'edit_note', 
+                  label: 'บันทึกงาน', 
+                  bg: 'bg-sky-50', 
+                  text: 'text-sky-600', 
+                  hoverBg: 'group-hover:bg-sky-500', 
+                  shadow: 'shadow-sky-500/10' 
+                },
+                { 
+                  href: '/harvest', 
+                  icon: 'agriculture', 
+                  label: 'เก็บเกี่ยว', 
+                  bg: 'bg-amber-50', 
+                  text: 'text-amber-600', 
+                  hoverBg: 'group-hover:bg-amber-500', 
+                  shadow: 'shadow-amber-500/10' 
+                },
+                { 
+                  href: '/finance', 
+                  icon: 'shopping_cart', 
+                  label: 'การเงิน', 
+                  bg: 'bg-rose-50', 
+                  text: 'text-rose-600', 
+                  hoverBg: 'group-hover:bg-rose-500', 
+                  shadow: 'shadow-rose-500/10' 
+                },
+              ].map((item, idx) => (
+                <Link
+                  key={idx}
+                  href={item.href}
+                  className="bg-white/80 backdrop-blur-xl rounded-[2rem] p-6 shadow-xl border border-white flex flex-col items-center justify-center gap-4 group active:scale-95 transition-all hover:-translate-y-1"
+                >
+                  <div className={`size-16 ${item.bg} rounded-[1.25rem] flex items-center justify-center ${item.text} ${item.hoverBg} group-hover:text-white transition-all duration-300 shadow-lg ${item.shadow}`}>
+                    <span className="material-symbols-outlined text-[32px] font-bold">{item.icon}</span>
+                  </div>
+                  <span className="text-sm font-black text-slate-800 uppercase tracking-widest">{item.label}</span>
+                </Link>
+              ))}
+            </div>
+
+            {/* Promo or Help Card */}
+            <div className="mt-6 bg-gradient-to-br from-slate-900 to-slate-800 rounded-[2rem] p-8 relative overflow-hidden shadow-2xl group cursor-pointer">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-emerald-500/40 transition-all duration-700"></div>
+              <h3 className="text-white font-black text-xl mb-2 relative z-10">ผู้ช่วย AI อัจฉริยะ</h3>
+              <p className="text-slate-600 text-sm font-black mb-4 relative z-10">ต้องการความช่วยเหลือในการวางแผนงานหรือไม่?</p>
+              <button className="bg-white text-slate-900 px-6 py-2.5 rounded-xl font-black text-sm hover:bg-emerald-400 transition-all active:scale-95 relative z-10">
+                คุยกับ AI
+              </button>
             </div>
           </section>
 
         </div>
 
       </main>
+
+      <BottomNavBar />
 
       <style jsx global>{`
         /* Custom Scrollbar for Tasks List */
@@ -333,8 +366,6 @@ export default function Home() {
           border-radius: 20px;
         }
       `}</style>
-
-      <BottomNavBar />
     </div>
   );
 }

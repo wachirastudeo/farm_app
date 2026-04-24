@@ -168,7 +168,7 @@ export default function AddPlanning() {
           </div>
           <div className="bg-white/80 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white space-y-6">
             <div className="space-y-2">
-              <label className="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">หัวข้อ/ชื่องาน</label>
+              <label className="text-xs font-black text-slate-600 uppercase tracking-widest ml-1">หัวข้อ/ชื่องาน</label>
               <input
                 type="text"
                 className="w-full p-4 bg-slate-50/50 border border-slate-200/60 rounded-2xl font-bold text-slate-800 text-xl focus:bg-white outline-none shadow-sm transition-all"
@@ -177,23 +177,23 @@ export default function AddPlanning() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label className="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">แปลงที่ดำเนินการ</label>
+                <label className="text-xs font-black text-slate-600 uppercase tracking-widest ml-1">แปลงที่ดำเนินการ</label>
                 <div className="relative group">
                   <select className="w-full p-4 bg-slate-50/50 border border-slate-200/60 rounded-2xl font-bold text-slate-800 appearance-none focus:bg-white outline-none cursor-pointer shadow-sm transition-all">
                     <option>เลือกแปลงพื้นที่</option>
                     <option>แปลง A1 - ทุเรียน</option>
                     <option>แปลง A2 - มังคุด</option>
                   </select>
-                  <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 group-hover:text-emerald-500 transition-colors pointer-events-none">unfold_more</span>
+                  <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-600 group-hover:text-emerald-500 transition-colors pointer-events-none">unfold_more</span>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label className="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">วันที่เริ่ม</label>
+                  <label className="text-xs font-black text-slate-600 uppercase tracking-widest ml-1">วันที่เริ่ม</label>
                   <input type="date" className="w-full p-4 bg-slate-50/50 border border-slate-200/60 rounded-2xl font-bold text-slate-800 focus:bg-white outline-none shadow-sm transition-all" defaultValue={new Date().toISOString().split('T')[0]} />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">เวลา</label>
+                  <label className="text-xs font-black text-slate-600 uppercase tracking-widest ml-1">เวลา</label>
                   <input type="time" className="w-full p-4 bg-slate-50/50 border border-slate-200/60 rounded-2xl font-bold text-slate-800 focus:bg-white outline-none shadow-sm transition-all" defaultValue="08:00" />
                 </div>
               </div>
@@ -209,7 +209,7 @@ export default function AddPlanning() {
           </div>
           <div className="bg-white/80 backdrop-blur-xl rounded-[2rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white">
             <textarea
-              className="w-full p-5 bg-slate-50/50 border border-slate-200/60 rounded-2xl font-bold text-slate-800 focus:bg-white outline-none min-h-[160px] resize-none placeholder:text-slate-400 text-lg leading-relaxed shadow-sm transition-all"
+              className="w-full p-5 bg-white border border-slate-200 rounded-2xl font-bold text-slate-800 focus:bg-white outline-none min-h-[160px] resize-none placeholder:text-slate-500 text-lg leading-relaxed shadow-sm transition-all"
               placeholder="ระบุสูตรปุ๋ย, จำนวนคน, หรือหมายเหตุสำหรับคนงาน..."
             ></textarea>
           </div>

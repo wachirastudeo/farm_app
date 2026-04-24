@@ -20,7 +20,7 @@ export default function Account() {
           <div className="size-10 bg-gradient-to-br from-emerald-600 to-teal-800 rounded-xl flex items-center justify-center text-white shadow-lg">
             <span className="material-symbols-outlined text-[20px]">park</span>
           </div>
-          <span className="text-xl font-black text-slate-800 tracking-tight">Smart Orchard</span>
+          <span className="text-xl font-black text-slate-800 tracking-tight">ระบบจัดการสวน</span>
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img 
@@ -50,28 +50,28 @@ export default function Account() {
               <div className="flex gap-2 justify-center md:justify-start">
                 <span className="bg-gradient-to-r from-amber-400 to-amber-600 text-white text-[10px] font-black px-3 py-1 rounded-lg shadow-lg flex items-center gap-1 uppercase tracking-wider">
                   <span className="material-symbols-outlined text-[12px]">verified</span>
-                  Premium
+                  สมาชิกพรีเมียม
                 </span>
               </div>
             </div>
-            <p className="text-base font-bold text-slate-500 flex items-center justify-center md:justify-start gap-2 mt-3">
+            <p className="text-base font-black text-slate-700 flex items-center justify-center md:justify-start gap-2 mt-3">
               <span className="material-symbols-outlined text-[20px] text-emerald-500">location_on</span>
               สวนร่มเย็น จ.จันทบุรี
             </p>
             <div className="mt-5 flex items-center gap-6 justify-center md:justify-start">
               <div className="flex flex-col">
-                <span className="text-xs font-black text-slate-400 uppercase tracking-widest">สมาชิก</span>
+                <span className="text-xs font-black text-slate-700 uppercase tracking-widest">สมาชิก</span>
                 <span className="text-xl font-black text-slate-800">5 ปี 8 เดือน</span>
               </div>
               <div className="w-[1px] h-8 bg-slate-200"></div>
               <div className="flex flex-col">
-                <span className="text-xs font-black text-slate-400 uppercase tracking-widest">ระดับแปลง</span>
-                <span className="text-xl font-black text-emerald-600">A+ Expert</span>
+                <span className="text-xs font-black text-slate-700 uppercase tracking-widest">ระดับแปลง</span>
+                <span className="text-xl font-black text-emerald-600">ผู้เชี่ยวชาญระดับ A+</span>
               </div>
             </div>
           </div>
           
-          <button className="relative z-10 bg-slate-900 text-white font-bold px-8 py-4 rounded-[1.5rem] hover:bg-emerald-800 hover:-translate-y-1 transition-all flex items-center gap-2 cursor-pointer">
+          <button className="relative z-10 bg-slate-900 text-white font-bold px-8 py-4 rounded-[1.5rem] hover:bg-emerald-800 hover:-translate-y-1 transition-all active:scale-95 shadow-lg shadow-slate-900/10 flex items-center gap-2 cursor-pointer">
             <span className="material-symbols-outlined">edit</span>
             แก้ไขข้อมูล
           </button>
@@ -82,7 +82,7 @@ export default function Account() {
           <div className="flex justify-between items-end px-2">
             <div>
               <h2 className="text-2xl font-black text-slate-800 tracking-tight">แปลงปลูกของฉัน</h2>
-              <p className="text-sm font-bold text-slate-500 mt-1">บริหารจัดการและติดตามความคืบหน้า</p>
+              <p className="text-sm font-black text-slate-700 mt-1">บริหารจัดการและติดตามความคืบหน้า</p>
             </div>
             <button className="size-12 rounded-2xl bg-white shadow-md border border-slate-200/60 hover:bg-emerald-50 text-emerald-600 flex items-center justify-center transition-all group active:scale-95 cursor-pointer">
               <span className="material-symbols-outlined font-black group-hover:rotate-90 transition-transform">add</span>
@@ -106,12 +106,12 @@ export default function Account() {
                 <div>
                   <h3 className="text-2xl font-black text-slate-800 mb-5">แปลงทุเรียน A1</h3>
                   <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
-                      <span className="text-[10px] font-black text-slate-400 uppercase block mb-1">จำนวนต้น</span>
+                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                      <span className="text-[10px] font-black text-slate-600 uppercase block mb-1">จำนวนต้น</span>
                       <span className="text-xl font-black text-slate-800">120 <span className="text-sm font-normal">ต้น</span></span>
                     </div>
-                    <div className="bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
-                      <span className="text-[10px] font-black text-slate-400 uppercase block mb-1">อายุพืช</span>
+                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                      <span className="text-[10px] font-black text-slate-600 uppercase block mb-1">อายุพืช</span>
                       <span className="text-xl font-black text-slate-800">5 <span className="text-sm font-normal">ปี</span></span>
                     </div>
                   </div>
@@ -139,12 +139,12 @@ export default function Account() {
                 <div>
                   <h3 className="text-2xl font-black text-slate-800 mb-5">แปลงมังคุด B2</h3>
                   <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
-                      <span className="text-[10px] font-black text-slate-400 uppercase block mb-1">จำนวนต้น</span>
+                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                      <span className="text-[10px] font-black text-slate-600 uppercase block mb-1">จำนวนต้น</span>
                       <span className="text-xl font-black text-slate-800">80 <span className="text-sm font-normal">ต้น</span></span>
                     </div>
-                    <div className="bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
-                      <span className="text-[10px] font-black text-slate-400 uppercase block mb-1">อายุพืช</span>
+                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                      <span className="text-[10px] font-black text-slate-600 uppercase block mb-1">อายุพืช</span>
                       <span className="text-xl font-black text-slate-800">3 <span className="text-sm font-normal">ปี</span></span>
                     </div>
                   </div>
@@ -158,10 +158,10 @@ export default function Account() {
 
             {/* Add Plot Empty State Card */}
             <button className="group bg-slate-100/50 hover:bg-white rounded-[2.5rem] border-4 border-dashed border-slate-200 hover:border-emerald-400/50 flex flex-col items-center justify-center p-8 transition-all duration-500 min-h-[400px] cursor-pointer">
-              <div className="size-20 bg-white shadow-xl rounded-[2rem] flex items-center justify-center text-slate-300 group-hover:text-emerald-500 group-hover:scale-110 transition-all duration-500 mb-6">
+              <div className="size-20 bg-white shadow-xl rounded-[2rem] flex items-center justify-center text-slate-400 group-hover:text-emerald-500 group-hover:scale-110 transition-all duration-500 mb-6">
                 <span className="material-symbols-outlined text-[40px]">add_location_alt</span>
               </div>
-              <span className="text-2xl font-black text-slate-400 group-hover:text-slate-800 transition-colors">เพิ่มแปลงใหม่</span>
+              <span className="text-2xl font-black text-slate-600 group-hover:text-slate-800 transition-colors">เพิ่มแปลงใหม่</span>
             </button>
           </div>
         </section>

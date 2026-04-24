@@ -13,11 +13,11 @@ export default function HarvestLog() {
           </Link>
           <div>
             <h1 className="text-2xl font-bold text-[#1a1c1b] tracking-tight">บันทึกการเก็บเกี่ยว</h1>
-            <p className="text-sm text-slate-500 font-medium mt-0.5">บันทึกข้อมูลผลผลิตที่เก็บเกี่ยวได้ในวันนี้</p>
+            <p className="text-sm text-slate-700 font-medium mt-0.5">บันทึกข้อมูลผลผลิตที่เก็บเกี่ยวได้ในวันนี้</p>
           </div>
         </div>
-        <button className="px-4 py-2 bg-[#FF7A00] text-white text-sm font-semibold rounded-xl hover:bg-[#E66E00] transition-colors flex items-center gap-2">
-          <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: '"FILL" 1' }}>save</span>
+        <button className="px-4 py-2 bg-slate-900 text-white text-sm font-bold rounded-xl hover:bg-emerald-800 transition-all active:scale-95 shadow-lg shadow-slate-900/10 flex items-center gap-2 cursor-pointer">
+          <span className="material-symbols-outlined text-[18px]">save</span>
           บันทึกข้อมูล
         </button>
       </header>
@@ -95,9 +95,9 @@ export default function HarvestLog() {
               </div>
               <div className="p-6">
                 <div className="border-2 border-dashed border-[#c2c9bb] rounded-xl p-8 flex flex-col items-center justify-center text-center hover:bg-[#f4f4f1] transition-colors cursor-pointer bg-[#f9f9f6]">
-                  <span className="material-symbols-outlined text-[48px] text-[#72796e] mb-4">cloud_upload</span>
-                  <p className="text-sm font-medium font-kanit text-[#1a1c1b] mb-1">แตะเพื่ออัปโหลดรูปภาพ</p>
-                  <p className="text-sm font-kanit text-[#42493e]">หรือลากไฟล์มาวางที่นี่</p>
+                  <span className="material-symbols-outlined text-[48px] text-slate-600 mb-4">cloud_upload</span>
+                  <p className="text-sm font-medium font-kanit text-slate-900 mb-1">แตะเพื่ออัปโหลดรูปภาพ</p>
+                  <p className="text-sm font-kanit text-slate-600">หรือลากไฟล์มาวางที่นี่</p>
                 </div>
               </div>
             </div>
@@ -164,8 +164,8 @@ export default function HarvestLog() {
 
             {/* Submit Button */}
             <div className="pt-2">
-              <button className="w-full h-[56px] bg-[#FF7A00] hover:bg-[#E66E00] active:scale-[0.98] transition-all rounded-xl text-[18px] font-semibold font-kanit text-white flex items-center justify-center gap-2 shadow-sm" type="button">
-                <span className="material-symbols-outlined icon-fill text-[24px]" style={{ fontVariationSettings: '"FILL" 1' }}>save</span>
+              <button className="w-full h-[56px] bg-slate-900 hover:bg-emerald-800 active:scale-[0.98] transition-all rounded-[1.5rem] text-[18px] font-bold font-kanit text-white flex items-center justify-center gap-2 shadow-lg shadow-slate-900/10 cursor-pointer" type="button">
+                <span className="material-symbols-outlined text-[24px]">save</span>
                 บันทึกข้อมูลเก็บเกี่ยว
               </button>
             </div>
